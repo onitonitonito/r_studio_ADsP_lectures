@@ -1,11 +1,9 @@
 
-# R µÑ·¯º¸±â   ###
+# R ë‘˜ëŸ¬ë³´ê¸°   ###
+###### ìž‘ì—… ê³µê°„ í• ë‹¹í•˜ê¸° ###
 
 
-###### ÀÛ¾÷ °ø°£ ÇÒ´çÇÏ±â ###
-
-
-getwd() 
+getwd()
 
 dir.create("d:/r/basic")
 setwd("d:/r/basic")
@@ -13,79 +11,79 @@ setwd("d:/r/basic")
 getwd()
 
 
-#### Ä¿¸Çµå ÀÔ·ÂÇÏ±â  ######
+#### ì»¤ë§¨ë“œ ìž…ë ¥í•˜ê¸°  ######
 
-1+1 
+1+1
 
 
-# ºÒ¿ÏÀüÇÑ Ä¿¸Çµå ÀÔ·Â
+# ë¶ˆì™„ì „í•œ ì»¤ë§¨ë“œ ìž…ë ¥
 max(4,6,8), max(4,6,
 )
 
 
-# ¿©·¯ÁÙÀ» ÇÑ²¨¹ø¿¡ ½ÇÇà
+# ì—¬ëŸ¬ì¤„ì„ í•œêº¼ë²ˆì— ì‹¤í–‰
 a<-1+1; b<-a/2
 
 
 
-# µµ¿ò¸» ±â´É È°¿ëÇÏ±â   #
+# ë„ì›€ë§ ê¸°ëŠ¥ í™œìš©í•˜ê¸°   #
 
-help.start()  
-help(max) 
+help.start()
+help(max)
 ?max
-RSiteSearch("max") 
+RSiteSearch("max")
 
 
 
-# ¸í·É¾î È÷½ºÅä¸® È°¿ëÇÏ±â  # 
+# ëª…ë ¹ì–´ ížˆìŠ¤í† ë¦¬ í™œìš©í•˜ê¸°  #
 
-#¿¹¸¦ µé¾î¼­ ¾Æ·¡¿Í °°Àº ¸í·É¾îµéÀ» ½ÇÇà½ÃÄ×´Ù¸é
+#ì˜ˆë¥¼ ë“¤ì–´ì„œ ì•„ëž˜ì™€ ê°™ì€ ëª…ë ¹ì–´ë“¤ì„ ì‹¤í–‰ì‹œì¼°ë‹¤ë©´
 ls()
 a<-rnorm(20)
 b<-hist(a)
 
-history()                       # À§ÀÇ ¸í·É¾îµéÀ» ´Ù½Ã ºÒ·¯µéÀÎ´Ù
-savehistory(file="myhistory")   # ¸í·É¾î È÷½ºÅä¸®¸¦ ÀúÀå
-loadhistory(file="myhistory")     # ¸í·É¾î È÷½ºÅä¸® ºÒ·¯¿À±â
+history()                       # ìœ„ì˜ ëª…ë ¹ì–´ë“¤ì„ ë‹¤ì‹œ ë¶ˆëŸ¬ë“¤ì¸ë‹¤
+savehistory(file="myhistory")   # ëª…ë ¹ì–´ ížˆìŠ¤í† ë¦¬ë¥¼ ì €ìž¥
+loadhistory(file="myhistory")     # ëª…ë ¹ì–´ ížˆìŠ¤í† ë¦¬ ë¶ˆëŸ¬ì˜¤ê¸°
 
 
 
 
-# ÆÐÅ°Áö  È°¿ëÇÏ±â  # 
+# íŒ¨í‚¤ì§€  í™œìš©í•˜ê¸°  #
 
-path.package()                 #ÇöÀç È°¼ºÈ­µÈ ÆÐÅ°ÁöµéÀÌ ¹«¾ùÀÎÁö È®ÀÎ
+path.package()                 #í˜„ìž¬ í™œì„±í™”ëœ íŒ¨í‚¤ì§€ë“¤ì´ ë¬´ì—‡ì¸ì§€ í™•ì¸
 
-data(Animals)                  #ÇÏµåµð½ºÅ©¿¡ MASS ÆÐÅ°Áö¸¦ ½ÇÇàÇÏÁö ¾Ê¾Ò±â ¶§¹®¿¡ ÆÄÀÏÀÌ ¾ø´Â°ÍÀ¸·Î ³ª¿È
+data(Animals)                  #í•˜ë“œë””ìŠ¤í¬ì— MASS íŒ¨í‚¤ì§€ë¥¼ ì‹¤í–‰í•˜ì§€ ì•Šì•˜ê¸° ë•Œë¬¸ì— íŒŒì¼ì´ ì—†ëŠ”ê²ƒìœ¼ë¡œ ë‚˜ì˜´
 
-library(MASS)                  #MASS ÆÐÅ°Áö¸¦ ¶óÀÌºê·¯¸®¿¡ ¼³Ä¡
-data(Animals)                  #µ¥ÀÌÅÍ È®ÀÎ °¡´É
+library(MASS)                  #MASS íŒ¨í‚¤ì§€ë¥¼ ë¼ì´ë¸ŒëŸ¬ë¦¬ì— ì„¤ì¹˜
+data(Animals)                  #ë°ì´í„° í™•ì¸ ê°€ëŠ¥
 summary(Animals)
 
-.libPaths()                    #ÇöÀç ÆÐÅ°ÁöµéÀÌ ÀúÀåµÇ´Â Àå¼Ò
+.libPaths()                    #í˜„ìž¬ íŒ¨í‚¤ì§€ë“¤ì´ ì €ìž¥ë˜ëŠ” ìž¥ì†Œ
 library(acepack)
-installed.packages()           #ÇöÀç ÀúÀåµÇ¾î ÀÖ´Â ÆÐÅ°ÁöµéÀÌ ÀúÀåµÇ´Â Àå¼Ò ¹× ±â´É¼³¸í
+installed.packages()           #í˜„ìž¬ ì €ìž¥ë˜ì–´ ìžˆëŠ” íŒ¨í‚¤ì§€ë“¤ì´ ì €ìž¥ë˜ëŠ” ìž¥ì†Œ ë° ê¸°ëŠ¥ì„¤ëª…
 nrow(installed.packages())
 
-install.packages("boot")       #ÇÏµåµð½ºÅ©¿¡ Á¸ÀçÇÏÁö ¾Ê´Â boot ÆÐÅ°Áö ´Ù¿î·Îµå ¹× ¼³Ä¡
+install.packages("boot")       #í•˜ë“œë””ìŠ¤í¬ì— ì¡´ìž¬í•˜ì§€ ì•ŠëŠ” boot íŒ¨í‚¤ì§€ ë‹¤ìš´ë¡œë“œ ë° ì„¤ì¹˜
 
-library(help=boot)             #´Ù¿î·Îµå µÈ boot ÆÐÅ°ÁöÀÇ help ´ÙÅ¥¸ÕÆ®¸¦ º¸¿©ÁÜ
-help(package=boot)             #À¥À» ÅëÇØ boot ÆÐÅ°ÁöÀÇ ´ÙÅ¥¸ÕÆ®¸¦ º¸¿©ÁÜ
-??boot                    #À¥À» ÅëÇØ boot ÆÐÅ°ÁöÀÇ ´ÙÅ¥¸ÕÆ®¸¦ º¸¿©ÁÜ
+library(help=boot)             #ë‹¤ìš´ë¡œë“œ ëœ boot íŒ¨í‚¤ì§€ì˜ help ë‹¤íë¨¼íŠ¸ë¥¼ ë³´ì—¬ì¤Œ
+help(package=boot)             #ì›¹ì„ í†µí•´ boot íŒ¨í‚¤ì§€ì˜ ë‹¤íë¨¼íŠ¸ë¥¼ ë³´ì—¬ì¤Œ
+??boot                    #ì›¹ì„ í†µí•´ boot íŒ¨í‚¤ì§€ì˜ ë‹¤íë¨¼íŠ¸ë¥¼ ë³´ì—¬ì¤Œ
 
-update.packages()              #ÆÐÅ°Áö ¾÷µ¥ÀÌÆ® ÇÏ±â
+update.packages()              #íŒ¨í‚¤ì§€ ì—…ë°ì´íŠ¸ í•˜ê¸°
 
-remove.packages("boot")          #ÆÐÅ°Áö »èÁ¦ÇÏ±â
-
-
-
-
-# Âü°í) R ½ÇÇà ½Ã ÆÐÅ°Áöµµ ÇÔ²² ÀÚµ¿ ½ÇÇàµÇµµ·Ï ¼³Á¤ÇÏ±â
-#¼öÁ¤ÇÒ ÆÄÀÏ: C:\Program Files\R\R-ÀÚ½ÅÀÇ¹öÀü¹øÈ£\etc\Rprofile.site
+remove.packages("boot")          #íŒ¨í‚¤ì§€ ì‚­ì œí•˜ê¸°
 
 
 
 
-#######    Ãâ·ÂÇÏ±â   ##############
+# ì°¸ê³ ) R ì‹¤í–‰ ì‹œ íŒ¨í‚¤ì§€ë„ í•¨ê»˜ ìžë™ ì‹¤í–‰ë˜ë„ë¡ ì„¤ì •í•˜ê¸°
+#ìˆ˜ì •í•  íŒŒì¼: C:\Program Files\R\R-ìžì‹ ì˜ë²„ì „ë²ˆí˜¸\etc\Rprofile.site
+
+
+
+
+#######    ì¶œë ¥í•˜ê¸°   ##############
 ##################################
 
 pi
@@ -95,32 +93,32 @@ print(pi)
 print(sqrt(2))
 
 
-#######    ¿©·¯ ÀÎÀÚ¸¦ ÇÑÁÙ¿¡ Ãâ·ÂÇÏ±â   ##############
-print("THe zoro occur at", 2*pi, "radians.") 
+#######    ì—¬ëŸ¬ ì¸ìžë¥¼ í•œì¤„ì— ì¶œë ¥í•˜ê¸°   ##############
+print("THe zoro occur at", 2*pi, "radians.")
 
-#catÇÔ¼ö´Â printÀÇ ´ë¾ÈÀ¸·Î ¿©·¯°³ÀÇ Ç×¸ñÀ» ¹­¾î¼­ ¿¬°áµÈ °á°ú·Î Ãâ·ÂÇØÁÜ
+#catí•¨ìˆ˜ëŠ” printì˜ ëŒ€ì•ˆìœ¼ë¡œ ì—¬ëŸ¬ê°œì˜ í•­ëª©ì„ ë¬¶ì–´ì„œ ì—°ê²°ëœ ê²°ê³¼ë¡œ ì¶œë ¥í•´ì¤Œ
 
-cat("The zoro occur at", 2*pi, "radians.","\n")  
+cat("The zoro occur at", 2*pi, "radians.","\n")
 
-#catÇÔ¼ö´Â °£´ÜÇÑ º¤ÅÍµµ Ãâ·Â °¡´É
+#catí•¨ìˆ˜ëŠ” ê°„ë‹¨í•œ ë²¡í„°ë„ ì¶œë ¥ ê°€ëŠ¥
 
-f<-c(0,1,1,2,3,5,8,13)                          
+f<-c(0,1,1,2,3,5,8,13)
 cat("The Fibonacci numbers are:",f,"....\n")
 
 
 
-#######    º¯¼ö ¼³Á¤ÇÏ±â   ##############
+#######    ë³€ìˆ˜ ì„¤ì •í•˜ê¸°   ##############
 ######################################
-# ´ëÀÔ¿¬»êÀÚ (<-)
+# ëŒ€ìž…ì—°ì‚°ìž (<-)
 
-x<-3                                      
+x<-3
 y<-2
 z<-sqrt(x^2+2*y)
 z
 
-#RÀº µ¿Àû Å¸ÀÔ ¾ð¾îÀÌ´Ù.
+#Rì€ ë™ì  íƒ€ìž… ì–¸ì–´ì´ë‹¤.
 
-x<-c("a", "b", "c", "d")                   
+x<-c("a", "b", "c", "d")
 x
 
 a<<-3
@@ -134,59 +132,59 @@ c
 
 
 
-#º¯¼ö ¸ñ·Ï º¸±â
+#ë³€ìˆ˜ ëª©ë¡ ë³´ê¸°
 
 x<-10
 y<-30
 z<-c("one", "two", "three")
 f<-function(n,p) sqrt(p*(1-p)/n)
 f(200,0.4)
-ls()            
-
-#º¯¼ö ¸ñ·Ï »Ó¾Æ´Ï¶ó ±¸Á¶¸¦ º¸¿©ÁÖ´Â ÇÔ¼ö
 ls()
-ls.str()                 
+
+#ë³€ìˆ˜ ëª©ë¡ ë¿ì•„ë‹ˆë¼ êµ¬ì¡°ë¥¼ ë³´ì—¬ì£¼ëŠ” í•¨ìˆ˜
+ls()
+ls.str()
 
 
-rm(a)                      # º¯¼ö »èÁ¦ , ÇÑ¹ø º¯¼ö¸¦ »èÁ¦ÇÏ¸é ¿µ¿øÈ÷ »èÁ¦ µÊ
-rm(b,c,z)                  # ÇÑ²¨¹ø¿¡ º¯¼ö »èÁ¦ °¡´É
+rm(a)                      # ë³€ìˆ˜ ì‚­ì œ , í•œë²ˆ ë³€ìˆ˜ë¥¼ ì‚­ì œí•˜ë©´ ì˜ì›ížˆ ì‚­ì œ ë¨
+rm(b,c,z)                  # í•œêº¼ë²ˆì— ë³€ìˆ˜ ì‚­ì œ ê°€ëŠ¥
 ls()
 
 
 .kkk<-12
-objects()                  #º¯¼ö¸¦ Á¶È¸ÇÏ´Â ÇÔ¼ö
+objects()                  #ë³€ìˆ˜ë¥¼ ì¡°íšŒí•˜ëŠ” í•¨ìˆ˜
 
-objects(all.names=T)       # .À¸·Î ½ÃÀÛÇÏ´Â º¯¼ö´Â ¼û±èº¯¼öÀÌ¹Ç·Î ÀÌ·± º¯¼ö±îÁö Á¶È¸ÇÏ´Â ÇÔ¼ö
+objects(all.names=T)       # .ìœ¼ë¡œ ì‹œìž‘í•˜ëŠ” ë³€ìˆ˜ëŠ” ìˆ¨ê¹€ë³€ìˆ˜ì´ë¯€ë¡œ ì´ëŸ° ë³€ìˆ˜ê¹Œì§€ ì¡°íšŒí•˜ëŠ” í•¨ìˆ˜
 
 
 
-# warning º¯¼ö ¸ñ·ÏÀ» ¸®½ºÆ® ÀÎÀÚ¿¡ ÁöÁ¤ÇÑ ´ÙÀ½ »èÁ¦ÇÏ°Ô µÊ¿¡ µû¶ó ±âÁ¸¿¡ ÀÖ´Â ¸ðµç º¯¼ö¸¦ »èÁ¦ÇÏ°Ô µÊ Á¶½ÉÇØ¾ß ÇÔ.
+# warning ë³€ìˆ˜ ëª©ë¡ì„ ë¦¬ìŠ¤íŠ¸ ì¸ìžì— ì§€ì •í•œ ë‹¤ìŒ ì‚­ì œí•˜ê²Œ ë¨ì— ë”°ë¼ ê¸°ì¡´ì— ìžˆëŠ” ëª¨ë“  ë³€ìˆ˜ë¥¼ ì‚­ì œí•˜ê²Œ ë¨ ì¡°ì‹¬í•´ì•¼ í•¨.
 
-rm(list=ls())        
+rm(list=ls())
 
 ls()
 
 
 
-#######  º¤ÅÍ »ý¼ºÇÏ±â  ##############
+#######  ë²¡í„° ìƒì„±í•˜ê¸°  ##############
 ###################################
 
 c(0,1,1,2,3,5,8,13)
 c(1*pi,2*pi,3*pi,4*pi)
 c("I","love","you.")
 c(TRUE,TRUE,FALSE,FALSE)
- 
- 
+
+
 d<-c(1,2,3)
 e<-c(4,5,6)
 f<-c("a","b","c")
 
-#º¤ÅÍÀÇ ÀÎÀÚ ÀÚÃ¼°¡ º¤ÅÍÀÎ °æ¿ì º¤ÅÍ¸¦ Ç®¾î¼­ ÇÏ³ª·Î ÇÕÄ£´Ù.
+#ë²¡í„°ì˜ ì¸ìž ìžì²´ê°€ ë²¡í„°ì¸ ê²½ìš° ë²¡í„°ë¥¼ í’€ì–´ì„œ í•˜ë‚˜ë¡œ í•©ì¹œë‹¤.
 
 g<-c(d,e,c(7,8,9))
 g
 
-#º¤ÅÍÀÇ ÀÎÀÚ Áß ÇÏ³ª¶óµµ ¹®ÀÚ°¡ Æ÷ÇÔµÇ¾î ÀÖ´Â °æ¿ì ¸ðµç ¿ø¼ÒµéÀº ¹®ÀÚÇüÀ¸·Î Á¤ÀÇ µÈ´Ù.
+#ë²¡í„°ì˜ ì¸ìž ì¤‘ í•˜ë‚˜ë¼ë„ ë¬¸ìžê°€ í¬í•¨ë˜ì–´ ìžˆëŠ” ê²½ìš° ëª¨ë“  ì›ì†Œë“¤ì€ ë¬¸ìží˜•ìœ¼ë¡œ ì •ì˜ ëœë‹¤.
 
 h<-c(d,f)
 h
@@ -195,7 +193,7 @@ mode(g)
 mode(h)
 
 
-####### ±âº»ÀûÀÎ Åë°è·® °è»êÇÏ±â  ###########
+####### ê¸°ë³¸ì ì¸ í†µê³„ëŸ‰ ê³„ì‚°í•˜ê¸°  ###########
 #######################################
 
 
@@ -203,34 +201,34 @@ a<-c(0,1,1,2,3,5,8,13)
 b<-log(a+1)
 c<-c(0,1,1,2,3,5,8,13,NA)
 
-#Æò±Õ
-mean(a)      
+#í‰ê· 
+mean(a)
 mean(0,1,1,2,3,5,8,13)
 
-#Áß¾Ó°ª                
-median(a)                 
-median(0,1,1,2,3,5,8,13)      
+#ì¤‘ì•™ê°’
+median(a)
+median(0,1,1,2,3,5,8,13)
 
 
-#Ç¥ÁØÆíÂ÷     
-sd(a) 
-sd(0,1,1,2,3,5,8,13)     
+#í‘œì¤€íŽ¸ì°¨
+sd(a)
+sd(0,1,1,2,3,5,8,13)
 
-#ºÐ»ê                       
-var(a)                    
-var(0,1,1,2,3,5,8,13)  
-#»ó°ü°è¼ö   
-cor(a,b)               
+#ë¶„ì‚°
+var(a)
+var(0,1,1,2,3,5,8,13)
+#ìƒê´€ê³„ìˆ˜
+cor(a,b)
 
-#°øºÐ»ê       
-cov(a,b)                       
-
-
-#Æò±Õ, Áß°£°ª, Ç¥ÁØÆíÂ÷´Â µ¥ÀÌÅÍ ÇÁ·¹ÀÓ¿¡¼­ °¢ º¯¼öµéÀ» ±âÁØÀ¸·Î °ªÀ» »êÃâ
-#ºÐ»êÀº °øºÐ»ê Çà·ÄÀ» Á¦°ø, »ó°ü°è¼ö´Â »ó°ü°è¼ö Çà·ÄÀ» Á¦°ø
+#ê³µë¶„ì‚°
+cov(a,b)
 
 
-## ´ÜÇÏ³ªÀÇ NA °ªÀÌ Æ÷ÇÔµÇ¾îµµ °á°ú´Â NA·Î ³ª¿À¹Ç·Î ¾Æ·¡¿Í °°ÀÌ È°¿ë
+#í‰ê· , ì¤‘ê°„ê°’, í‘œì¤€íŽ¸ì°¨ëŠ” ë°ì´í„° í”„ë ˆìž„ì—ì„œ ê° ë³€ìˆ˜ë“¤ì„ ê¸°ì¤€ìœ¼ë¡œ ê°’ì„ ì‚°ì¶œ
+#ë¶„ì‚°ì€ ê³µë¶„ì‚° í–‰ë ¬ì„ ì œê³µ, ìƒê´€ê³„ìˆ˜ëŠ” ìƒê´€ê³„ìˆ˜ í–‰ë ¬ì„ ì œê³µ
+
+
+## ë‹¨í•˜ë‚˜ì˜ NA ê°’ì´ í¬í•¨ë˜ì–´ë„ ê²°ê³¼ëŠ” NAë¡œ ë‚˜ì˜¤ë¯€ë¡œ ì•„ëž˜ì™€ ê°™ì´ í™œìš©
 
 mean(c)
 sd(c)
@@ -249,7 +247,7 @@ dfm_1
 
 dfm<-data.frame(height=c(187,178,176,169,181,172),
                 weight=c(82,72,70,65,74,68))
-dfm            
+dfm
 
 
 
@@ -266,14 +264,14 @@ cov(dfm)
 
 
 
-####### ¼ö¿­ »ý¼ºÇÏ±â  ##############
+####### ìˆ˜ì—´ ìƒì„±í•˜ê¸°  ##############
 ##################################
 
 1:10
 
-# byÀÇ µðÆúÆ®´Â 1
+# byì˜ ë””í´íŠ¸ëŠ” 1
 
-seq(from=1, to=10, by=2)        
+seq(from=1, to=10, by=2)
 rep(1,times=5)
 
 0:9
@@ -281,7 +279,7 @@ rep(1,times=5)
 9:0
 
 
-# ¼ö¿­ÀÇ ±æÀÌ¸¦ ÁöÁ¤ÇÏ°íÀÚ ÇÒ¶§ 
+# ìˆ˜ì—´ì˜ ê¸¸ì´ë¥¼ ì§€ì •í•˜ê³ ìž í• ë•Œ
 
 
 seq(from=0, to=50, length.out=6)
@@ -290,7 +288,7 @@ rep(pi, times=5)
 
 
 
-############ º¤ÅÍÀÇ ºñ±³  ##############
+############ ë²¡í„°ì˜ ë¹„êµ  ##############
 ####################################
 
 a<-3.1
@@ -308,15 +306,15 @@ z2=pi
 z==z1
 z==z2
 
-any(z==z1)           #º¤ÅÍÀÇ °ªµé Áß ÇÏ³ª¶óµµ °°Àº°¡?
-all(z==z1)           #º¤ÅÍÀÇ °ªµéÀÌ ¸ðµÎ °°Àº°¡?   all(z==0) ¸ðµç °ªµéÀÌ 0ÀÎ°¡?´Â ¸¹ÀÌ È°¿ëµÈ´Ù.
+any(z==z1)           #ë²¡í„°ì˜ ê°’ë“¤ ì¤‘ í•˜ë‚˜ë¼ë„ ê°™ì€ê°€?
+all(z==z1)           #ë²¡í„°ì˜ ê°’ë“¤ì´ ëª¨ë‘ ê°™ì€ê°€?   all(z==0) ëª¨ë“  ê°’ë“¤ì´ 0ì¸ê°€?ëŠ” ë§Žì´ í™œìš©ëœë‹¤.
 
 
 
 
 
 
-############ º¤ÅÍ¿¡ ÀÖ´Â ¿ø¼Ò ¼±ÅÃÇÏ±â  ########
+############ ë²¡í„°ì— ìžˆëŠ” ì›ì†Œ ì„ íƒí•˜ê¸°  ########
 ###########################################
 
 a<-c(0,1,1,2,3,5,8,13,NA)
@@ -332,31 +330,31 @@ a[c(1,3,5,7)]
 
 a[1,3,5,7]
 
-# ÀÎµ¦½º°¡ À½¼öÀÎ °æ¿ì´Â 1¹øÂ° °ªÀ» Á¦¿ÜÇÏ¶ó´Â ÀÇ¹Ì
+# ì¸ë±ìŠ¤ê°€ ìŒìˆ˜ì¸ ê²½ìš°ëŠ” 1ë²ˆì§¸ ê°’ì„ ì œì™¸í•˜ë¼ëŠ” ì˜ë¯¸
 
-a[-1]                                           
+a[-1]
 a[-(2:3)]
 a[-c(1,3,5,7)]
 
 
-# Áß¾Ó°ªº¸´Ù Å« ¸ðµç ¿ø¼Ò¸¦ ¼±ÅÃ
+# ì¤‘ì•™ê°’ë³´ë‹¤ í° ëª¨ë“  ì›ì†Œë¥¼ ì„ íƒ
 a
 median(a)
 
 a>median(a)
 
-a[a>median(a)]                    
+a[a>median(a)]
 
-# »óÇÏÀ§ 5% ¾È¿¡ ÀÖ´Â ¸ðµç ¿ø¼Ò¸¦ ¼±ÅÃ
+# ìƒí•˜ìœ„ 5% ì•ˆì— ìžˆëŠ” ëª¨ë“  ì›ì†Œë¥¼ ì„ íƒ
 &  |
-a[a<quantile(a,0.05)|a>quantile(a,0.95)]  
+    a[a<quantile(a,0.05)|a>quantile(a,0.95)]
 
-# Æò±Õ¿¡¼­ + - Ç¥ÁØÆíÂ÷¸¦ ³Ñ´Â ¸ðµç ¿ø¼Ò ¼±ÅÃ
+# í‰ê· ì—ì„œ + - í‘œì¤€íŽ¸ì°¨ë¥¼ ë„˜ëŠ” ëª¨ë“  ì›ì†Œ ì„ íƒ
 
-a-mean(a)>2*sd(a)      
-a[abs(a-mean(a))>2*sd(a)]           
+a-mean(a)>2*sd(a)
+a[abs(a-mean(a))>2*sd(a)]
 
-# NA³ª NULLÀÌ ¾Æ´Ñ ¸ðµç ¿ø¼Ò¸¦ ¼±ÅÃ
+# NAë‚˜ NULLì´ ì•„ë‹Œ ëª¨ë“  ì›ì†Œë¥¼ ì„ íƒ
 
 a<-c(1,2,NA,3,4)
 a
@@ -365,8 +363,8 @@ b<-c(1,2,NULL,3,4)
 b
 mean(b)
 
-a            
-a[!is.na(a) & !is.null(a)]                       
+a
+a[!is.na(a) & !is.null(a)]
 
 names(a)<-c("1st","2nd","3th","4th","5th","6th","7th","8th")
 a
@@ -377,7 +375,7 @@ a["4th"]
 
 
 
-############    º¤ÅÍ ¿¬»ê ¼öÇàÇÏ±â      ########
+############    ë²¡í„° ì—°ì‚° ìˆ˜í–‰í•˜ê¸°      ########
 ###########################################
 
 v1<-c(10,11,12,13,14)
@@ -401,21 +399,21 @@ v1-mean(v1)
 
 
 
-############    ¿¬»êÀÚ ¿ì¼±¼øÀ§       ########
+############    ì—°ì‚°ìž ìš°ì„ ìˆœìœ„       ########
 ###########################################
 
 
-PPT ÂüÁ¶
+PPT ì°¸ì¡°
 
 
 
 
-############     R  ÇÔ¼ö Á¤ÀÇ        ########
+############     R  í•¨ìˆ˜ ì •ì˜        ########
 ###########################################
 #
-#   function(¸Å°³º¯¼ö1, ¸Å°³º¯¼ö2, ¸Å°³º¯¼ö3,....) expr
+#   function(ë§¤ê°œë³€ìˆ˜1, ë§¤ê°œë³€ìˆ˜2, ë§¤ê°œë³€ìˆ˜3,....) expr
 #
-#   function(¸Å°³º¯¼ö1, ¸Å°³º¯¼ö2, ¸Å°³º¯¼ö3,....) {
+#   function(ë§¤ê°œë³€ìˆ˜1, ë§¤ê°œë³€ìˆ˜2, ë§¤ê°œë³€ìˆ˜3,....) {
 #        expr1
 #        expr2
 #        expr3
@@ -425,7 +423,7 @@ PPT ÂüÁ¶
 ##############################################?
 
 
-sdt<-function(x) (x-mean(x))/sd(x)   #Á¤±ÔºÐÆ÷¸¦ Ç¥ÁØÁ¤±ÔºÐÆ÷·Î Ç¥ÁØÈ­
+sdt<-function(x) (x-mean(x))/sd(x)   #ì •ê·œë¶„í¬ë¥¼ í‘œì¤€ì •ê·œë¶„í¬ë¡œ í‘œì¤€í™”
 
 x<-c(7,8,9,10,11,12)
 sdt(x)
@@ -437,10 +435,10 @@ hei<-c(187,178,176,169,181,172)
 wei<-c(82,72,70,65,74,82)
 
 #########################################
-# BMI Áö¼ö¸¦ ¸¸µé¾î ³»´Â ÇÔ¼ö¸¦ °³¹ßÇÑ´Ù.
-# ÇÔ¼ö¸íÀº BMIÀÌ°í
-# BMI=(Å°-100)/¸ö¹«°Ô
-# µ¥ÀÌÅÍ´Â ¾Æ·¡¿Í °°´Ù
+# BMI ì§€ìˆ˜ë¥¼ ë§Œë“¤ì–´ ë‚´ëŠ” í•¨ìˆ˜ë¥¼ ê°œë°œí•œë‹¤.
+# í•¨ìˆ˜ëª…ì€ BMIì´ê³ 
+# BMI=(í‚¤-100)/ëª¸ë¬´ê²Œ
+# ë°ì´í„°ëŠ” ì•„ëž˜ì™€ ê°™ë‹¤
 #
 # hei<-c(187,178,176,169,181,172)
 # wei<-c(82,72,70,65,74,82)
@@ -455,15 +453,15 @@ BMI(hei,wei)
 
 
 
-skew.and.kurto <-function(x)        #¿Öµµ¿Í Ã·µµ¸¦ ±¸ÇÏ´Â ÇÔ¼ö
+skew.and.kurto <-function(x)        #ì™œë„ì™€ ì²¨ë„ë¥¼ êµ¬í•˜ëŠ” í•¨ìˆ˜
 {
-  num1 <- mean((x-mean(x))^3)
-  denom1<-(mean((x-mean(x))^2))^1.5
-  num2 <-mean((x-mean(x))^4)
-  denom2<-(mean((x-mean(x))^2))^2
-  skew<-num1/denom1
-  kurto<-num2/denom2-3
-  return(c(skew,kurto))
+    num1 <- mean((x-mean(x))^3)
+    denom1<-(mean((x-mean(x))^2))^1.5
+    num2 <-mean((x-mean(x))^4)
+    denom2<-(mean((x-mean(x))^2))^2
+    skew<-num1/denom1
+    kurto<-num2/denom2-3
+    return(c(skew,kurto))
 }
 
 
@@ -471,33 +469,33 @@ t5<- 1:1000                    #1000 random obs from t with df 5
 skew.and.kurto(t5)
 
 
-#########  µ¥ÀÌÅÍ ÀÔ·ÂÇÏ±â  ############
+#########  ë°ì´í„° ìž…ë ¥í•˜ê¸°  ############
 ####################################
 
 
-#Å°º¸µå·Î µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇÒ ¶§ conbine ÇÔ¼ö¸¦ »ç¿ë
+#í‚¤ë³´ë“œë¡œ ë°ì´í„°ë¥¼ ìž…ë ¥í•  ë•Œ conbine í•¨ìˆ˜ë¥¼ ì‚¬ìš©
 
-a<-c(1,2,3,4,5,6,7,8,9)  
+a<-c(1,2,3,4,5,6,7,8,9)
 
-#ºó µ¥ÀÌÅÍ ÇÁ·¹ÀÓÀ» ¸¸µç µÚ ³»ÀåµÈ ÆíÁý±â¸¦ ºÒ·¯¿Í µ¥ÀÌÅÍ ÀÔ·Â
+#ë¹ˆ ë°ì´í„° í”„ë ˆìž„ì„ ë§Œë“  ë’¤ ë‚´ìž¥ëœ íŽ¸ì§‘ê¸°ë¥¼ ë¶ˆëŸ¬ì™€ ë°ì´í„° ìž…ë ¥
 
-temp<-data.frame()                  
+temp<-data.frame()
 b<-edit(temp)
 fix(b)
 
 b
 
-#¸Þ´º->edit->data editor -> object¸í ÀÔ·Â                                 
+#ë©”ë‰´->edit->data editor -> objectëª… ìž…ë ¥
 
 
-# °£´ÜÇÑ ¹®Á¦¸¦ ´Ù·ê ¶§´Â µ¥ÀÌÅÍ ÆÄÀÏÀ» »ý¼ºÇÏ°í ÀÐ¾î¿À´Â °ÍÀÌ ±ÍÂú½À´Ï´Ù.
-# ÀÌ·²¶§´Â R¿¡ µ¥ÀÌÅÍ¸¦ °ð¹Ù·Î ÀÔ·ÂÇÏ´Â °Ô Æí¸®ÇÏÇÕ´Ï´Ù.
-# ÀÌ·¯ÇÑ ¹æ¹ýÀ» À§ÇØ µ¥ÀÌÅÍ ÇÁ·¹ÀÓÀ»  Á¤ÀÇÇÏ°í cÇÔ¼ö·Î º¤ÅÍ »ý¼ºÇØ¼­ µ¥ÀÌÅÍ¸¦ ÀÔ·ÂÇØ º¾½Ã´Ù.
+# ê°„ë‹¨í•œ ë¬¸ì œë¥¼ ë‹¤ë£° ë•ŒëŠ” ë°ì´í„° íŒŒì¼ì„ ìƒì„±í•˜ê³  ì½ì–´ì˜¤ëŠ” ê²ƒì´ ê·€ì°®ìŠµë‹ˆë‹¤.
+# ì´ëŸ´ë•ŒëŠ” Rì— ë°ì´í„°ë¥¼ ê³§ë°”ë¡œ ìž…ë ¥í•˜ëŠ” ê²Œ íŽ¸ë¦¬í•˜í•©ë‹ˆë‹¤.
+# ì´ëŸ¬í•œ ë°©ë²•ì„ ìœ„í•´ ë°ì´í„° í”„ë ˆìž„ì„  ì •ì˜í•˜ê³  cí•¨ìˆ˜ë¡œ ë²¡í„° ìƒì„±í•´ì„œ ë°ì´í„°ë¥¼ ìž…ë ¥í•´ ë´…ì‹œë‹¤.
 
-c<-data.frame(                    
-  label=c("low","mid","high"),
-  lbound=c(0,0.5,1.5),
-  ubound=c(0.5,1.5,2.5)
+c<-data.frame(
+    label=c("low","mid","high"),
+    lbound=c(0,0.5,1.5),
+    ubound=c(0.5,1.5,2.5)
 )
 
 c
@@ -506,7 +504,7 @@ c
 
 
 
-#########  ÆÄÀÏ¿¡ Ãâ·ÂÇÏ±â  ############
+#########  íŒŒì¼ì— ì¶œë ¥í•˜ê¸°  ############
 ####################################
 
 a<-sqrt(10)
@@ -539,55 +537,55 @@ getwd()
 
 
 
-#########  ÆÄÀÏ ¸ñ·Ïº¸±â  ############
+#########  íŒŒì¼ ëª©ë¡ë³´ê¸°  ############
 ####################################
 
 list.files()
 
-#ÇÏÀ§ µð·ºÅä¸®ÀÇ ¸ðµç ÆÄÀÏÀ» º¼¼ö ÀÖÀ½
+#í•˜ìœ„ ë””ë ‰í† ë¦¬ì˜ ëª¨ë“  íŒŒì¼ì„ ë³¼ìˆ˜ ìžˆìŒ
 
-list.files(recursive=T)         
-#ÇÏÀ§ µð·ºÅä¸®ÀÇ ¼û°Ü³õÀº ÆÄÀÏ(¸¶Ä§Ç¥·Î ½ÃÀÛÇÏ´Â ÆÄÀÏ)±îÁö ¸ðµÎ º¼¼ö ÀÖÀ½
-list.files(recursive=T, all.files=T)           
-
-
+list.files(recursive=T)
+#í•˜ìœ„ ë””ë ‰í† ë¦¬ì˜ ìˆ¨ê²¨ë†“ì€ íŒŒì¼(ë§ˆì¹¨í‘œë¡œ ì‹œìž‘í•˜ëŠ” íŒŒì¼)ê¹Œì§€ ëª¨ë‘ ë³¼ìˆ˜ ìžˆìŒ
+list.files(recursive=T, all.files=T)
 
 
 
-#########  À©µµ¿ì¿¡¼­ 'cannot open file ÇØ°áÇÏ±â  ############
+
+
+#########  ìœˆë„ìš°ì—ì„œ 'cannot open file í•´ê²°í•˜ê¸°  ############
 ##########################################################
 
 
 
-# d:\dataedu\R\basic\exam1.txt   À§µµ¿ì¿¡¼­ ÆÄÀÏÀÌ ÀÖÀ½À» ¾Ë°í ÀÖ´Ù.
-#ÇÏÁö¸¸ 
+# d:\dataedu\R\basic\exam1.txt   ìœ„ë„ìš°ì—ì„œ íŒŒì¼ì´ ìžˆìŒì„ ì•Œê³  ìžˆë‹¤.
+#í•˜ì§€ë§Œ
 
-f1<-read.table("d:\dataedu\R\basic\exam1.txt")  
-# ¿ª½½·¹½¬(\)°¡ ÀÌ¸§¿¡ Æ÷ÇÔµÇ¾î ÀÖÀ¸¸é ¹®Á¦°¡ ¹ß»ý
-# ¿ª½½·¹½¬ µÚ¿¡ ¿À´Â ¸ðµç ¹®ÀÚ¸¦ ÀÌ½ºÄÉÀÌÇÁ Ã³¸®ÇÑµÚ d:dataeduRbasicexam1.txt ·Î ÀÎ½Ä
+f1<-read.table("d:\dataedu\R\basic\exam1.txt")
+# ì—­ìŠ¬ë ˆì‰¬(\)ê°€ ì´ë¦„ì— í¬í•¨ë˜ì–´ ìžˆìœ¼ë©´ ë¬¸ì œê°€ ë°œìƒ
+# ì—­ìŠ¬ë ˆì‰¬ ë’¤ì— ì˜¤ëŠ” ëª¨ë“  ë¬¸ìžë¥¼ ì´ìŠ¤ì¼€ì´í”„ ì²˜ë¦¬í•œë’¤ d:dataeduRbasicexam1.txt ë¡œ ì¸ì‹
 
-# À©µµ¿ì¿¡¼­ RÀº ½½·¯½¬(/)¸¦ ¿ª½½·¹½¬¿Í ¶È°°ÀÌ Ãë±ÞÇÏ¹Ç·Î ¹®Á¦ ÇØ°á
-f1<-read.table("d:/r/basic/exam1.txt")  
-
-
-#R¿¡¼­´Â ¿ª½½·¹½¬ (\\)¸¦ ¿ª½½·¹½¬ (\)·Î ÀÎ½ÄÇÏ¿© Ãë±ÞÇÏ¹Ç·Î ¹®Á¦ ÇØ°á
-
-f1<-read.table("d:\\r\\basic\\exam1.txt")  
+# ìœˆë„ìš°ì—ì„œ Rì€ ìŠ¬ëŸ¬ì‰¬(/)ë¥¼ ì—­ìŠ¬ë ˆì‰¬ì™€ ë˜‘ê°™ì´ ì·¨ê¸‰í•˜ë¯€ë¡œ ë¬¸ì œ í•´ê²°
+f1<-read.table("d:/r/basic/exam1.txt")
 
 
+#Rì—ì„œëŠ” ì—­ìŠ¬ë ˆì‰¬ (\\)ë¥¼ ì—­ìŠ¬ë ˆì‰¬ (\)ë¡œ ì¸ì‹í•˜ì—¬ ì·¨ê¸‰í•˜ë¯€ë¡œ ë¬¸ì œ í•´ê²°
+
+f1<-read.table("d:\\r\\basic\\exam1.txt")
 
 
-############°íÁ¤µ¥ÀÌÅÍ ºÒ·¯¿À±â####################
+
+
+############ê³ ì •ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸°####################
 ###############################################
 
-# f2<-read.fwf("exam2.txt", widths=c(w1,w2,w3,w4))   °íÁ¤ ÀÚ¸® µ¥ÀÌÅÍ ÀÐ±â  
+# f2<-read.fwf("exam2.txt", widths=c(w1,w2,w3,w4))   ê³ ì • ìžë¦¬ ë°ì´í„° ì½ê¸°
 
-#1Â°´Â °úÁ¦Á¦Ãâ¿©ºÎ, 2Â°´Â Á¡¼ö »çÀÌ¿¡´Â 2Ä­ÀÇ ºóÄ­
+#1ì§¸ëŠ” ê³¼ì œì œì¶œì—¬ë¶€, 2ì§¸ëŠ” ì ìˆ˜ ì‚¬ì´ì—ëŠ” 2ì¹¸ì˜ ë¹ˆì¹¸
 
-f2<-read.fwf("exam2.txt", widths=c(1,-2,2)) 
+f2<-read.fwf("exam2.txt", widths=c(1,-2,2))
 
-f2<-read.fwf("exam2.txt", widths=c(1,-2,2),  
-             col.names=c("report","score"))                 # col¸í ÁöÁ¤
+f2<-read.fwf("exam2.txt", widths=c(1,-2,2),
+             col.names=c("report","score"))                 # colëª… ì§€ì •
 
 f2
 
@@ -595,37 +593,37 @@ f2
 
 
 
-###########ºñ°íÁ¤µ¥ÀÌÅÍ ºÒ·¯¿À±â#############################
+###########ë¹„ê³ ì •ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸°#############################
 
-# (ÅÇ ¶Ç´Â °ø¹éÀ¸·Î ±¸ºÐµÈ )ÅØ½ºÆ® ÆÄÀÏ·Î µÈ Å×ÀÌºíÇü½ÄÀÇ µ¥ÀÌÅÍ ºÒ·¯¿À±â
-# °¢ ÁÙÀÌ ÇÏ³ªÀÇ ·¹ÄÚµå
-f3<-read.table("kings.txt")               
-f3    
-# ÇÏ³ªÀÇ ·¹ÄÚµå ³»¿¡¼­, °ø¹é, ÅÇ, ½±Ç¥ µî ÇÑ±ÛÀÚ Â¥¸® ±¸ºÐ¹®ÀÚ                                     
-# f3<-read.table("kings.txt", sep= :, )   
-# °¢ ·¹ÄÚµå¤Ñ µ¿ÀÏÇÑ ¼öÀÇ ÇÊµå¸¦ °¡Áü
+# (íƒ­ ë˜ëŠ” ê³µë°±ìœ¼ë¡œ êµ¬ë¶„ëœ )í…ìŠ¤íŠ¸ íŒŒì¼ë¡œ ëœ í…Œì´ë¸”í˜•ì‹ì˜ ë°ì´í„° ë¶ˆëŸ¬ì˜¤ê¸°
+# ê° ì¤„ì´ í•˜ë‚˜ì˜ ë ˆì½”ë“œ
+f3<-read.table("kings.txt")
+f3
+# í•˜ë‚˜ì˜ ë ˆì½”ë“œ ë‚´ì—ì„œ, ê³µë°±, íƒ­, ì‰½í‘œ ë“± í•œê¸€ìž ì§œë¦¬ êµ¬ë¶„ë¬¸ìž
+# f3<-read.table("kings.txt", sep= :, )
+# ê° ë ˆì½”ë“œã…¡ ë™ì¼í•œ ìˆ˜ì˜ í•„ë“œë¥¼ ê°€ì§
 
 
 class(f3$V1)
 
-# ¹®ÀÚ¿­ ·¹ÄÚµå°ªÀ» factor·Î ÀÎ½ÄÇÏÁö ¾Ê°í ¹®ÀÚ¿­·Î ÀÎ½ÄÇÏ°Ô ÇÔ
+# ë¬¸ìžì—´ ë ˆì½”ë“œê°’ì„ factorë¡œ ì¸ì‹í•˜ì§€ ì•Šê³  ë¬¸ìžì—´ë¡œ ì¸ì‹í•˜ê²Œ í•¨
 
-f3<-read.table("kings.txt", stringsAsFactor=FALSE)   
-f3 
+f3<-read.table("kings.txt", stringsAsFactor=FALSE)
+f3
 class(f3$V1)
 
-f3<-read.table("kings.txt", na.strings=".")    # SASÀÇ °áÃø°ª(.) ÇüÅÂÀÇ µ¥ÀÌÅÍ¸¦ NA ÇüÅÂ·Î °áÃø°ªÀ» º¯°æ
+f3<-read.table("kings.txt", na.strings=".")    # SASì˜ ê²°ì¸¡ê°’(.) í˜•íƒœì˜ ë°ì´í„°ë¥¼ NA í˜•íƒœë¡œ ê²°ì¸¡ê°’ì„ ë³€ê²½
 f3
 
 
-# csv ÆÄÀÏÀº R, ¿¢¼¿, ´Ù¸¥ ½ºÇÁ·¹µå½ÃÆ® ÇÁ·Î±×·¥, µ¥ÀÌÅÍº£ÀÌ½º °ü¸®ÀÚµéÀÌ ÀÚÁÖ »ç¿ëÇÏ´Â Çü½Ä
+# csv íŒŒì¼ì€ R, ì—‘ì…€, ë‹¤ë¥¸ ìŠ¤í”„ë ˆë“œì‹œíŠ¸ í”„ë¡œê·¸ëž¨, ë°ì´í„°ë² ì´ìŠ¤ ê´€ë¦¬ìžë“¤ì´ ìžì£¼ ì‚¬ìš©í•˜ëŠ” í˜•ì‹
 
-f4<-read.csv("frame.csv",header=T, as.is=T)            
+f4<-read.csv("frame.csv",header=T, as.is=T)
 f4
 class(f4$ename)
 
 
-#Å½»ö±â¸¦ ÅëÇÑ µ¥ÀÌÅÍ ÆÄÀÏ ºÒ·¯¿À±â
+#íƒìƒ‰ê¸°ë¥¼ í†µí•œ ë°ì´í„° íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸°
 
 file.choose<-read.csv (file.choose())
 head(file.choose)
@@ -633,63 +631,63 @@ head(file.choose)
 
 
 
-########### csv ÆÄÀÏ Ãâ·ÂÇÏ±â ############################
+########### csv íŒŒì¼ ì¶œë ¥í•˜ê¸° ############################
 ######################################################
 
-write.csv(f4,file="new_frame.csv", row.names=FALSE)   
+write.csv(f4,file="new_frame.csv", row.names=FALSE)
 ?write
 
 a<-c(1,2,3,4,5,6)
 dim(a)<-c(3,2)
-write.csv(a,file="a.csv", row.names=FALSE) 
+write.csv(a,file="a.csv", row.names=FALSE)
 
 
 
 
-######### µ¥ÀÌÅÍ ÇÁ·¹ÀÓ ¸¸µé±â  ########
+######### ë°ì´í„° í”„ë ˆìž„ ë§Œë“¤ê¸°  ########
 
-# º¤ÅÍ¿Í ¿äÀÎÀÌ È¥ÇÕµÈ µ¥ÀÌÅÍ¶ó¸é data.frame ÇÔ¼ö¸¦ »ç¿ëÇØ¼­ Á¶¸³
-##  dfm<-data.frame(v1,v2,v3,f1,f2)            
+# ë²¡í„°ì™€ ìš”ì¸ì´ í˜¼í•©ëœ ë°ì´í„°ë¼ë©´ data.frame í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•´ì„œ ì¡°ë¦½
+##  dfm<-data.frame(v1,v2,v3,f1,f2)
 
-# µ¥ÀÌÅÍ°¡ ¸®½ºÆ® ±¸Á¶¶ó¸é as.data.frame À¸·Î Àç¼³Á¤ °¡´É
-#  dfm<-as.data.frame(list.of.vectors)       
+# ë°ì´í„°ê°€ ë¦¬ìŠ¤íŠ¸ êµ¬ì¡°ë¼ë©´ as.data.frame ìœ¼ë¡œ ìž¬ì„¤ì • ê°€ëŠ¥
+#  dfm<-as.data.frame(list.of.vectors)
 
-#º¤ÅÍ »ý¼º
+#ë²¡í„° ìƒì„±
 level<-c("low","mid","high")
 lbound<-c(0.1,0.5,1.5)
 ubound<-c(0.5,1.5,2.5)
 
-#º¤ÅÍ¸¦ µ¥ÀÌÅÍÇÁ·¹ÀÓÀ¸·Î º¯È¯
+#ë²¡í„°ë¥¼ ë°ì´í„°í”„ë ˆìž„ìœ¼ë¡œ ë³€í™˜
 dfm1<-data.frame(level, lbound,ubound)
-dfm1                                           
-
-
-
-#¿ÜºÎ µ¥ÀÌÅÍ¸¦ ºÒ·¯¿Í ¾îºêÁ§Æ®¿¡ ÇÒ´ç
-
-
-a<-read.csv("frame.csv", header=T)             
-a
-
-
-# ¿ÜºÎ µ¥ÀÌÅÍ°¡ ¸®½ºÆ® ±¸Á¶ÀÓ¿¡ µû¶ó ±¸Á¶ º¯°æÀ¸·Î µ¥ÀÌÅÍ¸¦ µ¥ÀÌÅÍÇÁ·¹ÀÓ¿¡ Àû¿ë
-
-dfm1<-as.data.frame(a)                      
 dfm1
 
 
-#¿ÀºêÁ§Æ®ÀÇ ³»¿ë Áß ÇÊ¿äÇÑ º¯¼ö¸¸ ¼±ÅÃÇØ¼­ data.frame Çü½ÄÀ¸·Î Àç ±¸¼º
+
+#ì™¸ë¶€ ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì™€ ì–´ë¸Œì íŠ¸ì— í• ë‹¹
+
+
+a<-read.csv("frame.csv", header=T)
+a
+
+
+# ì™¸ë¶€ ë°ì´í„°ê°€ ë¦¬ìŠ¤íŠ¸ êµ¬ì¡°ìž„ì— ë”°ë¼ êµ¬ì¡° ë³€ê²½ìœ¼ë¡œ ë°ì´í„°ë¥¼ ë°ì´í„°í”„ë ˆìž„ì— ì ìš©
+
+dfm1<-as.data.frame(a)
+dfm1
+
+
+#ì˜¤ë¸Œì íŠ¸ì˜ ë‚´ìš© ì¤‘ í•„ìš”í•œ ë³€ìˆ˜ë§Œ ì„ íƒí•´ì„œ data.frame í˜•ì‹ìœ¼ë¡œ ìž¬ êµ¬ì„±
 
 dfm2<-data.frame(a$empno, a$ename, a$deptno)
-dfm2                                           
+dfm2
 
-# ¿­ÀÇ ÀÌ¸§À» Àû¿ëÇÏ¿© data.frame Çü½ÄÀ¸·Î Àç ±¸¼º
+# ì—´ì˜ ì´ë¦„ì„ ì ìš©í•˜ì—¬ data.frame í˜•ì‹ìœ¼ë¡œ ìž¬ êµ¬ì„±
 
-dfm2<-data.frame(empno=a$empno, ename=a$ename, deptno=a$deptno)     
-dfm2                                     
+dfm2<-data.frame(empno=a$empno, ename=a$ename, deptno=a$deptno)
+dfm2
 
 
-# °³º° º¤ÅÍ·Î Á¤ÀÇµÈ µ¥ÀÌÅÍµéÀ» ¸®½ºÆ®·Î ±¸Á¶¸¦ º¯°æÇÏ°í µ¥ÀÌÅÍ ÇÁ·¹ÀÓÇü½ÄÀ¸·Î Àû¿ë  
+# ê°œë³„ ë²¡í„°ë¡œ ì •ì˜ëœ ë°ì´í„°ë“¤ì„ ë¦¬ìŠ¤íŠ¸ë¡œ êµ¬ì¡°ë¥¼ ë³€ê²½í•˜ê³  ë°ì´í„° í”„ë ˆìž„í˜•ì‹ìœ¼ë¡œ ì ìš©
 
 lst<-list(a1=a$empno, a2=a$ename, a3=a$deptno, a4=a$phone)
 lst
@@ -702,8 +700,8 @@ lst1
 
 
 
-##  subset(µ¥ÀÌÅÍ ÇÁ·¹ÀÓ,select=c(¿­ÀÌ¸§, ¿­ÀÌ¸§,...)) À¸·Î ½±°Ô µ¥ÀÌÅÍ ¼±ÅÃ
-##  subset(µ¥ÀÌÅÍ ÇÁ·¹ÀÓ,select=c(¿­ÀÌ¸§, ¿­ÀÌ¸§,...),subset=(¿­ÀÌ¸§>Á¶°Ç))
+##  subset(ë°ì´í„° í”„ë ˆìž„,select=c(ì—´ì´ë¦„, ì—´ì´ë¦„,...)) ìœ¼ë¡œ ì‰½ê²Œ ë°ì´í„° ì„ íƒ
+##  subset(ë°ì´í„° í”„ë ˆìž„,select=c(ì—´ì´ë¦„, ì—´ì´ë¦„,...),subset=(ì—´ì´ë¦„>ì¡°ê±´))
 
 lst<-subset(lst1,select=-a4)
 lst
@@ -716,10 +714,10 @@ lst
 
 
 
-##############           ¿¬½À ¹®Á¦            #######################
-#        MASS ¶ó´Â ÆÐÅ°Áö ³» Cars93 µ¥ÀÌÅÍ¼Â¿¡¼­                #####
-# 1) city ¿¡¼­ °¶·±´ç 30¸¶ÀÏ ÀÌ»ó ÁÖÇàÇÏ´Â ¿¬ºñ¸¦ °¡Áö´Â Â÷¸¦ ¼±ÅÃ  #
-# 2) °í¼Óµµ·Î¿¡¼­ MPG °ªÀÌ Áß¾Ó°ªÀÌ»óÀÎ ¸ðµç Â÷ÀÇ Á¦Á¶»ç¿Í ¸ðµ¨¸í  ##
+##############           ì—°ìŠµ ë¬¸ì œ            #######################
+#        MASS ë¼ëŠ” íŒ¨í‚¤ì§€ ë‚´ Cars93 ë°ì´í„°ì…‹ì—ì„œ                #####
+# 1) city ì—ì„œ ê°¤ëŸ°ë‹¹ 30ë§ˆì¼ ì´ìƒ ì£¼í–‰í•˜ëŠ” ì—°ë¹„ë¥¼ ê°€ì§€ëŠ” ì°¨ë¥¼ ì„ íƒ  #
+# 2) ê³ ì†ë„ë¡œì—ì„œ MPG ê°’ì´ ì¤‘ì•™ê°’ì´ìƒì¸ ëª¨ë“  ì°¨ì˜ ì œì¡°ì‚¬ì™€ ëª¨ë¸ëª…  ##
 #####################################################################
 ?Cars93
 Cars93
@@ -732,7 +730,7 @@ newCars93<-subset(Cars93, select=c(Manufacturer, Model,Type, Price, RPM),
                   subset=c(MPG.highway>median(MPG.highway)))
 newCars93
 
-#¿­ÀÌ¸§À¸·Î ¿­»èÁ¦
+#ì—´ì´ë¦„ìœ¼ë¡œ ì—´ì‚­ì œ
 newCars93<-subset(newCars93, select=-Manufacturer)
 newCars93
 
@@ -741,7 +739,7 @@ cor(Cars93$Price, Cars93$RPM)
 
 
 
-#µ¥ÀÌÅÍ ÇÁ·¹ÀÓÀÇ ¿­ÀÌ¸§ ¹Ù²Ù±â
+#ë°ì´í„° í”„ë ˆìž„ì˜ ì—´ì´ë¦„ ë°”ê¾¸ê¸°
 colnames(newCars93)<-c("Manu", "Model","Type", "Price", "RPM")
 newCars93
 
