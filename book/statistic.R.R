@@ -9,14 +9,14 @@ head(iris)
 summary(iris)
 
 Se_L <- iris$Sepal.Length
-mean(Se_L)                             
-median(Se_L)                           
-sd(Se_L)                                
-var(Se_L)                              
-quantile(Se_L)                    
-quantile(Se_L, 3/4)                   
-max(Se_L)                               
-min(Se_L)                              
+mean(Se_L)
+median(Se_L)
+sd(Se_L)
+var(Se_L)
+quantile(Se_L)
+quantile(Se_L, 3/4)
+max(Se_L)
+min(Se_L)
 
 install.packages("MASS")
 library(MASS)
@@ -27,25 +27,25 @@ summary(Cars93)
 
 
 An_B <- Animals$body
-mean(An_B)                              
-median(An_B)                          
-sd(An_B)                              
-var(An_B)                              
-quantile(An_B, 1/4)                   
-quantile(An_B, 3/4)                  
-max(An_B)                           
-min(An_B)   
+mean(An_B)
+median(An_B)
+sd(An_B)
+var(An_B)
+quantile(An_B, 1/4)
+quantile(An_B, 3/4)
+max(An_B)
+min(An_B)
 quantile(An_B)
 
 An_b <- Animals$brain
-mean(An_b)                             
-median(An_b)                         
-sd(An_b)                           
-var(An_b)                            
-quantile(An_b, 1/4)                  
-quantile(An_b, 3/4)                
-max(An_b)                           
-min(An_b)      
+mean(An_b)
+median(An_b)
+sd(An_b)
+var(An_b)
+quantile(An_b, 1/4)
+quantile(An_b, 3/4)
+max(An_b)
+min(An_b)
 quantile(An_b)
 
 
@@ -63,7 +63,7 @@ quantile(An_b)
 oddcount<-function(x){
   k<-0
   for(n in x){
-  if(n%%2==1)k<-k+1
+    if(n%%2==1)k<-k+1
   }
   return(k)
 }
@@ -80,37 +80,37 @@ summary(mtcars)
 a <- mtcars$mpg
 b <- mtcars$hp
 c<-mtcars$wt
-plot(a, b)                           
-plot(a, c)                           
+plot(a, b)
+plot(a, c)
 
 
-                           
+
 cov(a,c)
-cor(a,c) 
+cor(a,c)
 
-cor(mtcars)                             
-cov(mtcars)                          
+cor(mtcars)
+cov(mtcars)
 
 
 install.packages("Hmisc")
 library(Hmisc)
 
 rcorr(a, c, type="pearson")
-rcorr(as.matrix(mtcars), type="spearman")  
+rcorr(as.matrix(mtcars), type="spearman")
 rcorr(as.matrix(mtcars), type="spearman")$r
 
 
 
-test <- read.csv("D:/µ¥ÀÌÅÍºĞ¼® °­ÀÇ/4.2/data/4.2_001.csv")
+test <- read.csv("D:/ë°ì´í„°ë¶„ì„ ê°•ì˜/4.2/data/4.2_001.csv")
 test<-test[,-1]
 library(Hmisc)
 rcorr(as.matrix(test), type="spearman")        # type = spearman | pearson
 rcorr(as.matrix(test), type="spearman")$r
 
 
-test2 <- read.csv("D:/µ¥ÀÌÅÍºĞ¼® °­ÀÇ/4.2/data/4.2_002.csv")
+test2 <- read.csv("D:/ë°ì´í„°ë¶„ì„ ê°•ì˜/4.2/data/4.2_002.csv")
 test2
-rcorr(as.matrix(test2), type="pearson") 
+rcorr(as.matrix(test2), type="pearson")
 
 
 
@@ -118,61 +118,61 @@ rcorr(as.matrix(test2), type="pearson")
 ### 4. regression analysis
 ###-----------------------------------------------------------------------------
 
-set.seed(2)                           
-x <- runif(10, 0, 11)             
-y <- runif(10, 11, 20)                 
+set.seed(2)
+x <- runif(10, 0, 11)
+y <- runif(10, 11, 20)
 dfrm <- data.frame(x, y)
 dfrm
 
-lm (y ~ x, data=dfrm)                   
+lm (y ~ x, data=dfrm)
 # y = 15.82328 - 0.09608 * x
 
 
-set.seed(2)                             
-y <- runif(10, -10, 20)               
-u <- runif(10, 0, 11)                
-v <- runif(10, 11, 20)              
-w <- runif(10, 1, 30)                 
+set.seed(2)
+y <- runif(10, -10, 20)
+u <- runif(10, 0, 11)
+v <- runif(10, 11, 20)
+w <- runif(10, 1, 30)
 dfrm <- data.frame(y, u, v, w)
 dfrm
-m <- lm(y ~ u + v + w)    
+m <- lm(y ~ u + v + w)
 m
 #  y = 3.8503 - 0.2090 * u + 0.4120 * v - 0.1609 * w
 
 summary(m)
 
-# FÅë°è·® : 0.1029
-# p-value : 0.9554 (À¯ÀÇ¼öÁØ 5%ÇÏ¿¡ À¯ÀÇÇÏÁö ¾ÊÀ½ 0.05)
-# È¸±Í°è¼ö : u,v,w ¸ğµÎ p-value°¡ 0.05 º¸´Ù Ä¿¼­ È¸±Í°è¼öÀÇ ÃßÁ¤µéÀÌ Åë°èÀûÀ¸·Î À¯ÀÇÇÏÁö ¾ÊÀ½
-# °áÁ¤°è¼ö R-squared = 0.04894, Adjusted R-squared = -0.4266 : È¸±Í½ÄÀÌ µ¥ÀÌÅÍ¸¦ ÀûÀıÇÏ°Ô ¼³¸íÇÏÁö ¸øÇÔ
+# Fí†µê³„ëŸ‰ : 0.1029
+# p-value : 0.9554 (ìœ ì˜ìˆ˜ì¤€ 5%í•˜ì— ìœ ì˜í•˜ì§€ ì•ŠìŒ 0.05)
+# íšŒê·€ê³„ìˆ˜ : u,v,w ëª¨ë‘ p-valueê°€ 0.05 ë³´ë‹¤ ì»¤ì„œ íšŒê·€ê³„ìˆ˜ì˜ ì¶”ì •ë“¤ì´ í†µê³„ì ìœ¼ë¡œ ìœ ì˜í•˜ì§€ ì•ŠìŒ
+# ê²°ì •ê³„ìˆ˜ R-squared = 0.04894, Adjusted R-squared = -0.4266 : íšŒê·€ì‹ì´ ë°ì´í„°ë¥¼ ì ì ˆí•˜ê²Œ ì„¤ëª…í•˜ì§€ ëª»í•¨
 
 
 install.packages("MASS")
 library(MASS)
 head(ChikWeight)
 
-data(ChickWeight, package="datasets")   
+data(ChickWeight, package="datasets")
 head(ChickWeight)
 
-Chick <- ChickWeight[ChickWeight$Diet == 1, ]  
+Chick <- ChickWeight[ChickWeight$Diet == 1, ]
 Chick
-Chick <- ChickWeight[ChickWeight$Chick == 1, ]  
+Chick <- ChickWeight[ChickWeight$Chick == 1, ]
 Chick
- 
+
 m <- lm(weight~Time, data=Chick)
 m
 
-#  weight = 24.465 + 7.988 * time 
+#  weight = 24.465 + 7.988 * time
 
 summary(m)
 
-# FÅë°è·® : 232.9
-# p-value : 0.0000002974 (À¯ÀÇ¼öÁØ 5%ÇÏ¿¡ È¸±Í¸ğÇüÀÌ Åë°èÀûÀ¸·Î À¯ÀÇÇÔ)
-# È¸±Í°è¼ö : time ÀÇ p-value°¡ 0.05 º¸´Ù ÀÛ¾Æ¼­ È¸±Í°è¼öÀÇ ÃßÁ¤ÀÌ Åë°èÀûÀ¸·Î À¯ÀÇÇÔ
-# °áÁ¤°è¼ö R-squared = 0.9588, Adjusted R-squared = 0.9547 : È¸±Í½ÄÀÌ µ¥ÀÌÅÍ¸¦ ÀûÀıÇÏ°Ô ¼³¸íÇÔ
+# Fí†µê³„ëŸ‰ : 232.9
+# p-value : 0.0000002974 (ìœ ì˜ìˆ˜ì¤€ 5%í•˜ì— íšŒê·€ëª¨í˜•ì´ í†µê³„ì ìœ¼ë¡œ ìœ ì˜í•¨)
+# íšŒê·€ê³„ìˆ˜ : time ì˜ p-valueê°€ 0.05 ë³´ë‹¤ ì‘ì•„ì„œ íšŒê·€ê³„ìˆ˜ì˜ ì¶”ì •ì´ í†µê³„ì ìœ¼ë¡œ ìœ ì˜í•¨
+# ê²°ì •ê³„ìˆ˜ R-squared = 0.9588, Adjusted R-squared = 0.9547 : íšŒê·€ì‹ì´ ë°ì´í„°ë¥¼ ì ì ˆí•˜ê²Œ ì„¤ëª…í•¨
 
 
-# ¿¹Á¦: cars µ¥ÀÌÅÍ¸¦ È°¿ëÇÑ °î¼±È¸±ÍºĞ¼®
+# ì˜ˆì œ: cars ë°ì´í„°ë¥¼ í™œìš©í•œ ê³¡ì„ íšŒê·€ë¶„ì„
 
 data(cars, package="datasets")
 cars
@@ -184,18 +184,18 @@ cars
 m <- lm(dist ~ speed + speed2, data=cars)
 m
 
-#  dist = 2.47014 + 0.91329 *speed  +0.09996 * speed^2 
+#  dist = 2.47014 + 0.91329 *speed  +0.09996 * speed^2
 
 summary(m)
 
-# FÅë°è·® : 47.14
-# p-value : 5.852e-12 (À¯ÀÇ¼öÁØ 5%ÇÏ¿¡ È¸±Í¸ğÇüÀÌ Åë°èÀûÀ¸·Î À¯ÀÇÇÔ)
-# È¸±Í°è¼ö : speed ÀÇ p-value°¡ 0.05 º¸´Ù Ä¿¼­ È¸±Í°è¼öÀÇ ÃßÁ¤ÀÌ Åë°èÀûÀ¸·Î À¯ÀÇÇÏÁö ¸øÇÔ
-# °áÁ¤°è¼ö R-squared = 0.6673, Adjusted R-squared = 0.6532 : È¸±Í½ÄÀÌ µ¥ÀÌÅÍ¸¦ ÀûÀıÇÏ°Ô ¼³¸íÇÑ´Ù.
+# Fí†µê³„ëŸ‰ : 47.14
+# p-value : 5.852e-12 (ìœ ì˜ìˆ˜ì¤€ 5%í•˜ì— íšŒê·€ëª¨í˜•ì´ í†µê³„ì ìœ¼ë¡œ ìœ ì˜í•¨)
+# íšŒê·€ê³„ìˆ˜ : speed ì˜ p-valueê°€ 0.05 ë³´ë‹¤ ì»¤ì„œ íšŒê·€ê³„ìˆ˜ì˜ ì¶”ì •ì´ í†µê³„ì ìœ¼ë¡œ ìœ ì˜í•˜ì§€ ëª»í•¨
+# ê²°ì •ê³„ìˆ˜ R-squared = 0.6673, Adjusted R-squared = 0.6532 : íšŒê·€ì‹ì´ ë°ì´í„°ë¥¼ ì ì ˆí•˜ê²Œ ì„¤ëª…í•œë‹¤.
 
 
-#2Â÷ °î¼± È¸±ÍºĞ¼®
-          
+#2ì°¨ ê³¡ì„  íšŒê·€ë¶„ì„
+
 x <- c(1:9)
 y <- c(5, 3, 2, 3, 4, 6, 10, 12, 18)
 df1 <- data.frame(x, y)
@@ -209,26 +209,26 @@ df2
 m <- lm(y ~ x, data=df1)
 m
 
-#  y = -1.167 + 1.633 *x 
+#  y = -1.167 + 1.633 *x
 
 summary(m)
 
-# FÅë°è·® : 16.99
-# p-value : 0.0044 (À¯ÀÇ¼öÁØ 5%ÇÏ¿¡ È¸±Í¸ğÇüÀÌ Åë°èÀûÀ¸·Î À¯ÀÇÇÔ)
-# È¸±Í°è¼ö : speed ÀÇ p-value°¡ 0.05 º¸´Ù ÀÛ¾Æ È¸±Í°è¼öÀÇ ÃßÁ¤ÀÌ Åë°èÀûÀ¸·Î À¯ÀÇÇÔ
-# °áÁ¤°è¼ö R-squared = 0.7083, Adjusted R-squared = 0.666 : È¸±Í½ÄÀÌ µ¥ÀÌÅÍ¸¦ ÀûÀıÇÏ°Ô ¼³¸íÇÑ´Ù.
+# Fí†µê³„ëŸ‰ : 16.99
+# p-value : 0.0044 (ìœ ì˜ìˆ˜ì¤€ 5%í•˜ì— íšŒê·€ëª¨í˜•ì´ í†µê³„ì ìœ¼ë¡œ ìœ ì˜í•¨)
+# íšŒê·€ê³„ìˆ˜ : speed ì˜ p-valueê°€ 0.05 ë³´ë‹¤ ì‘ì•„ íšŒê·€ê³„ìˆ˜ì˜ ì¶”ì •ì´ í†µê³„ì ìœ¼ë¡œ ìœ ì˜í•¨
+# ê²°ì •ê³„ìˆ˜ R-squared = 0.7083, Adjusted R-squared = 0.666 : íšŒê·€ì‹ì´ ë°ì´í„°ë¥¼ ì ì ˆí•˜ê²Œ ì„¤ëª…í•œë‹¤.
 
 
 
 m2 <- lm(y ~ x + x2, data=df2)
 m2
-#  y = 7.1667 + -2.9121 *x +0.4545 *x^2 
+#  y = 7.1667 + -2.9121 *x +0.4545 *x^2
 summary(m2)
 
-# FÅë°è·® : 292.2
-# p-value : 1.05e-06 (À¯ÀÇ¼öÁØ 5%ÇÏ¿¡ È¸±Í¸ğÇüÀÌ Åë°èÀûÀ¸·Î À¯ÀÇÇÔ)
-# È¸±Í°è¼ö : speed ÀÇ p-value°¡ 0.05 º¸´Ù ÀÛ¾Æ È¸±Í°è¼öÀÇ ÃßÁ¤ÀÌ Åë°èÀûÀ¸·Î À¯ÀÇÇÔ
-# °áÁ¤°è¼ö R-squared = 0.9898, Adjusted R-squared = 0.9864 : È¸±Í½ÄÀÌ µ¥ÀÌÅÍ¸¦ ÀûÀıÇÏ°Ô ¼³¸íÇÑ´Ù.
+# Fí†µê³„ëŸ‰ : 292.2
+# p-value : 1.05e-06 (ìœ ì˜ìˆ˜ì¤€ 5%í•˜ì— íšŒê·€ëª¨í˜•ì´ í†µê³„ì ìœ¼ë¡œ ìœ ì˜í•¨)
+# íšŒê·€ê³„ìˆ˜ : speed ì˜ p-valueê°€ 0.05 ë³´ë‹¤ ì‘ì•„ íšŒê·€ê³„ìˆ˜ì˜ ì¶”ì •ì´ í†µê³„ì ìœ¼ë¡œ ìœ ì˜í•¨
+# ê²°ì •ê³„ìˆ˜ R-squared = 0.9898, Adjusted R-squared = 0.9864 : íšŒê·€ì‹ì´ ë°ì´í„°ë¥¼ ì ì ˆí•˜ê²Œ ì„¤ëª…í•œë‹¤.
 
 
 
@@ -247,7 +247,7 @@ rd <- nodal[,-1]
 gfit <- glm(r~., data=rd, family="binomial")
 summary(gfit)
 
-# ÃÖÁ¾ È¸±Í½Ä
+# ìµœì¢… íšŒê·€ì‹
 a<-c(2,4,6,7)
 rd<-nodal[,a]
 rd
@@ -258,7 +258,7 @@ summary(gfit)
 
 
 ###-----------------------------------------------------------------------------
-###  regression analysis  (variable selection) 
+###  regression analysis  (variable selection)
 ###-----------------------------------------------------------------------------
 
 #Backward selection
@@ -294,7 +294,7 @@ step(lm(y ~ x1 + x2 + x3 + x4, data=df), scope=list(lower = ~ 1, upper = ~ x1 + 
 step(lm(y ~ 1, data=df), scope=list(lower = ~ 1, upper = ~ x1 + x2 + x3 + x4), direction = "both")
 
 
-#MASS ÆĞÅ°ÁöÀÇ hills µ¥ÀÌÅÍ¸¦ È°¿ëÇØ¼­ timeÀ» Á¾¼Óº¯¼ö·Î ÀüÁø¼±ÅÃ¹ıÀ¸·Î È¸±ÍºĞ¼®
+#MASS íŒ¨í‚¤ì§€ì˜ hills ë°ì´í„°ë¥¼ í™œìš©í•´ì„œ timeì„ ì¢…ì†ë³€ìˆ˜ë¡œ ì „ì§„ì„ íƒë²•ìœ¼ë¡œ íšŒê·€ë¶„ì„
 
 
 data(hills, package="MASS")
@@ -304,13 +304,13 @@ step(lm(time ~ 1, data=hills), scope=list(lower = ~ 1, upper = ~ dist + climb + 
 
 
 
-# µ¥ÀÌÅÍ ¼ÂÀ» ºÒ·¯µé¿© setp ÇÔ¼ö¸¦ ÅëÇÑ È¸±ÍºĞ¼® ½Ç½Ã
+# ë°ì´í„° ì…‹ì„ ë¶ˆëŸ¬ë“¤ì—¬ setp í•¨ìˆ˜ë¥¼ í†µí•œ íšŒê·€ë¶„ì„ ì‹¤ì‹œ
 
 
-#data <- read.table("E:/ADSP/±³À°ÀÚ·á/4.2/data/4.2_003.csv", header=TRUE, sep=",", 
-                   stringsAsFactors=FALSE, na.strings=c('NIL'), 
-                   comment.char="#", encoding="UTF-8") 
-Bio <- read.csv("E:/ADSP/±³À°ÀÚ·á/4.2/data/4.2_003.csv", header=T, encoding="UTF-8")
+#data <- read.table("E:/ADSP/êµìœ¡ìë£Œ/4.2/data/4.2_003.csv", header=TRUE, sep=",",
+stringsAsFactors=FALSE, na.strings=c('NIL'),
+comment.char="#", encoding="UTF-8")
+Bio <- read.csv("E:/ADSP/êµìœ¡ìë£Œ/4.2/data/4.2_003.csv", header=T, encoding="UTF-8")
 head(Bio)
 
 step(lm(Pemax ~ 1, data=Bio), scope=list(lower = ~ 1, upper = ~ age + height + weight + BMP + RV + FRC + TLC), direction = "forward")
@@ -339,37 +339,37 @@ library(forecast)
 
 #------------------------------------------------------------------
 # decompose non-seasonal data
-# ¿µ±¹ ¿ÕµéÀÇ »ç¸Á½Ã ³ªÀÌ µ¥ÀÌÅÍ
+# ì˜êµ­ ì™•ë“¤ì˜ ì‚¬ë§ì‹œ ë‚˜ì´ ë°ì´í„°
 #------------------------------------------------------------------
 
 
-kings <- c(60, 43, 67, 50, 56, 42, 50, 65, 68, 43, 
-          65, 34, 47, 34, 49, 41, 13, 35, 53, 56,
-          16, 43, 69, 59, 48, 59, 86, 55, 68, 51,
-          33, 49, 67, 77, 81, 67, 71, 81, 68, 70,
-          77, 56)
-#kings <- read.table("http://robjhyndman.com/tsdldata/misc/kings.dat", header=TRUE, sep=",", 
-#                   stringsAsFactors=FALSE, na.strings=c('NIL'), 
-#                   comment.char="#", encoding="UTF-8") 
+kings <- c(60, 43, 67, 50, 56, 42, 50, 65, 68, 43,
+           65, 34, 47, 34, 49, 41, 13, 35, 53, 56,
+           16, 43, 69, 59, 48, 59, 86, 55, 68, 51,
+           33, 49, 67, 77, 81, 67, 71, 81, 68, 70,
+           77, 56)
+#kings <- read.table("http://robjhyndman.com/tsdldata/misc/kings.dat", header=TRUE, sep=",",
+#                   stringsAsFactors=FALSE, na.strings=c('NIL'),
+#                   comment.char="#", encoding="UTF-8")
 #kings <- scan("http://robjhyndman.com/tsdldata/misc/kings.dat")
 #write.table(data, file="data/data.csv", append=FALSE, quote=FALSE, sep=",", row.names=FALSE)
 
-kingstimeseries <- ts(kings)            #tsÇÔ¼ö¸¦ È°¿ëÇÏ¿© µ¥ÀÌÅÍ¸¦ ½Ã°è¿­µ¥ÀÌÅÍ·Î º¯È¯          
+kingstimeseries <- ts(kings)            #tsí•¨ìˆ˜ë¥¼ í™œìš©í•˜ì—¬ ë°ì´í„°ë¥¼ ì‹œê³„ì—´ë°ì´í„°ë¡œ ë³€í™˜
 kingstimeseries
-plot.ts(kingstimeseries)                #plot.ts ÇÔ¼ö¸¦ È°¿ëÇÏ¿© ½Ã°è¿­µ¥ÀÌÅÍ¸¦ µµ½ÄÈ­
+plot.ts(kingstimeseries)                #plot.ts í•¨ìˆ˜ë¥¼ í™œìš©í•˜ì—¬ ì‹œê³„ì—´ë°ì´í„°ë¥¼ ë„ì‹í™”
 
 
-#SMA ÇÔ¼ö¸¦ ÀÌ¿ëÇØ °£´ÜÇÑ ½Ã°è¿­ÀÇ Æ®·£µå¸¦ º¸¿©ÁÖ´Â ºĞÇØ½Ã°è¿­ÀÇ ÀÌµ¿Æò±Õ ±×·¡ÇÁ ±×¸®±â
-kingstimeseriesSMA3<-SMA(kingstimeseries,n=3)  
+#SMA í•¨ìˆ˜ë¥¼ ì´ìš©í•´ ê°„ë‹¨í•œ ì‹œê³„ì—´ì˜ íŠ¸ëœë“œë¥¼ ë³´ì—¬ì£¼ëŠ” ë¶„í•´ì‹œê³„ì—´ì˜ ì´ë™í‰ê·  ê·¸ë˜í”„ ê·¸ë¦¬ê¸°
+kingstimeseriesSMA3<-SMA(kingstimeseries,n=3)
 plot.ts(kingstimeseriesSMA3)
 
-kingstimeseriesSMA8<-SMA(kingstimeseries,n=8)  
+kingstimeseriesSMA8<-SMA(kingstimeseries,n=8)
 plot.ts(kingstimeseriesSMA8)
 
-kingstimeseriesSMA12<-SMA(kingstimeseries,n=12)  
+kingstimeseriesSMA12<-SMA(kingstimeseries,n=12)
 plot.ts(kingstimeseriesSMA12)
 
-par(mfrow=c(2,2))                        #ÇÏ³ªÀÇ ±×·¡ÇÁ È­¸é¿¡ ÇÔ²¾ Ç¥ÇöÇÏ±â
+par(mfrow=c(2,2))                        #í•˜ë‚˜ì˜ ê·¸ë˜í”„ í™”ë©´ì— í•¨ê¼ í‘œí˜„í•˜ê¸°
 plot.ts(kingstimeseries)
 plot.ts(kingstimeseriesSMA3)
 plot.ts(kingstimeseriesSMA8)
@@ -377,9 +377,9 @@ plot.ts(kingstimeseriesSMA12)
 
 
 
-#Â÷ºĞÇÏ¿© Á¤»ó¼º È®ÀÎÇÏ±â (difference)
+#ì°¨ë¶„í•˜ì—¬ ì •ìƒì„± í™•ì¸í•˜ê¸° (difference)
 
-# diff ÇÔ¼ö¸¦ È°¿ëÇÏ¿© µ¥ÀÌÅÍ Â÷ºĞÇÏ±â
+# diff í•¨ìˆ˜ë¥¼ í™œìš©í•˜ì—¬ ë°ì´í„° ì°¨ë¶„í•˜ê¸°
 
 kingstimeseriesdiff1 <- diff(kingstimeseries, differences = 1)
 kingstimeseriesdiff2 <- diff(kingstimeseries, differences = 2)
@@ -389,8 +389,8 @@ kingstimeseriesdiff2
 kingstimeseriesdiff3
 
 
-par(mfrow=c(2,2)) 
-plot.ts(kingstimeseriesdiff1)           #1Â÷ Â÷ºĞÇÑ °á°ú, Æò±Õ°ú ºĞ»êÀÌ ½Ã°£¿¡ ÀÇÁ¸ÇÏÁö ¾ÊÀ½
+par(mfrow=c(2,2))
+plot.ts(kingstimeseriesdiff1)           #1ì°¨ ì°¨ë¶„í•œ ê²°ê³¼, í‰ê· ê³¼ ë¶„ì‚°ì´ ì‹œê°„ì— ì˜ì¡´í•˜ì§€ ì•ŠìŒ
 plot.ts(kingstimeseriesdiff2)
 plot.ts(kingstimeseriesdiff3)
 
@@ -406,49 +406,49 @@ sd(kingstimeseriesdiff3)
 
 
 
-# ARIMA ¸ğµ¨ °áÁ¤ÇÏ±â ARIMA(p, 1, q)
+# ARIMA ëª¨ë¸ ê²°ì •í•˜ê¸° ARIMA(p, 1, q)
 
-# acfÇÔ¼ö¿Í pacf ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© ¸ğÇü °áÁ¤ÇÏ±â
+# acfí•¨ìˆ˜ì™€ pacf í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ëª¨í˜• ê²°ì •í•˜ê¸°
 
 
-acf(kingstimeseriesdiff1, lag.max=20)          #1Â÷ Â÷ºĞÇÑ µ¥ÀÌÅÍ·Î (ACF) È®ÀÎ
+acf(kingstimeseriesdiff1, lag.max=20)          #1ì°¨ ì°¨ë¶„í•œ ë°ì´í„°ë¡œ (ACF) í™•ì¸
 acf(kingstimeseriesdiff1, lag.max=20, plot=FALSE)
-#--- lag = 0 ÁöÁ¡Àº ÀĞÁö ¾ÊÀ½
-#--- lag = 1 ÀÎ ÁöÁ¡¸¸ Á¡¼± ±¸°£¹Û¿¡ ÀÖÀ½
-#--- lag = 2 ÀÎ ÁöÁ¡ºÎÅÍ ¸ğµÎ Á¡¼± ±¸°£¾È¿¡ ÀÖÀ½ lag°¡ 2¿¡¼­ Àı´ÜÁ¡À» °¡Áü -> MA(1)¸ğÇü
+#--- lag = 0 ì§€ì ì€ ì½ì§€ ì•ŠìŒ
+#--- lag = 1 ì¸ ì§€ì ë§Œ ì ì„  êµ¬ê°„ë°–ì— ìˆìŒ
+#--- lag = 2 ì¸ ì§€ì ë¶€í„° ëª¨ë‘ ì ì„  êµ¬ê°„ì•ˆì— ìˆìŒ lagê°€ 2ì—ì„œ ì ˆë‹¨ì ì„ ê°€ì§ -> MA(1)ëª¨í˜•
 
 
-pacf(kingstimeseriesdiff1, lag.max=20)         #1Â÷ Â÷ºĞÇÑ µ¥ÀÌÅÍ·Î (PACF) È®ÀÎ
+pacf(kingstimeseriesdiff1, lag.max=20)         #1ì°¨ ì°¨ë¶„í•œ ë°ì´í„°ë¡œ (PACF) í™•ì¸
 pacf(kingstimeseriesdiff1, lag.max=20, plot=FALSE)
-#--- lag = 0 ÁöÁ¡Àº ÀÚ·á ¾øÀ½
-#--- lag = 1, 2, 3 ÁöÁ¡¸¸ Á¡¼± ±¸°£¹Û¿¡ ÀÖÀ½
-#--- lag = 4 ÀÎ ÁöÁ¡ºÎÅÍ ¸ğµÎ Á¡¼± ±¸°£¾È¿¡ ÀÖÀ½ lag°¡ 4¿¡¼­ Àı´ÜÁ¡À» °¡Áü -> AR(3) ëª¨í˜•
+#--- lag = 0 ì§€ì ì€ ìë£Œ ì—†ìŒ
+#--- lag = 1, 2, 3 ì§€ì ë§Œ ì ì„  êµ¬ê°„ë°–ì— ìˆìŒ
+#--- lag = 4 ì¸ ì§€ì ë¶€í„° ëª¨ë‘ ì ì„  êµ¬ê°„ì•ˆì— ìˆìŒ lagê°€ 4ì—ì„œ ì ˆë‹¨ì ì„ ê°€ì§ -> AR(3) ç´â‘¦ì‚
 
 
 
-# forecast package ¿¡ ³»ÀåµÈ auto.arima ÇÔ¼ö¸¦ ÀÌ¿ëÇÑ ¸ğÇü Ã£±â
+# forecast package ì— ë‚´ì¥ëœ auto.arima í•¨ìˆ˜ë¥¼ ì´ìš©í•œ ëª¨í˜• ì°¾ê¸°
 
-auto.arima(kings)                       
-#--- ARIMA(0, 1, 1) À» °¡Àå ÀûÀıÇÑ ¸ğÇüÀ¸·Î ¼±ÅÃ
+auto.arima(kings)
+#--- ARIMA(0, 1, 1) ì„ ê°€ì¥ ì ì ˆí•œ ëª¨í˜•ìœ¼ë¡œ ì„ íƒ
 
 
-#  ARIMA ¸ğÇüÀ» ÅëÇØ ¹Ì·¡ ¿¹ÃøÇÏ±â 
-# ARIMA¸ğÇüÀ¸·Î µ¥ÀÌÅÍ º¸Á¤ÇÏ±â(fitting)
+#  ARIMA ëª¨í˜•ì„ í†µí•´ ë¯¸ë˜ ì˜ˆì¸¡í•˜ê¸°
+# ARIMAëª¨í˜•ìœ¼ë¡œ ë°ì´í„° ë³´ì •í•˜ê¸°(fitting)
 
 kingstimeseriesARIMA<- arima(kingstimeseries, order=c(0, 1, 1))
 kingstimeseriesARIMA
 
-# forecast.Arima ÇÔ¼ö¸¦ ÅëÇØ ¹Ì·¡ ¿¹ÃøÇÏ±â
+# forecast.Arima í•¨ìˆ˜ë¥¼ í†µí•´ ë¯¸ë˜ ì˜ˆì¸¡í•˜ê¸°
 
 kingstimeseriesforecasts<-forecast.Arima(kingstimeseriesARIMA)
 kingstimeseriesforecasts
 
-# 5¸íÀ» ¿¹ÃøÇÏ°íÀÚ ÇÑ´Ù¸é h=5·Î ÁöÁ¤°¡´É
+# 5ëª…ì„ ì˜ˆì¸¡í•˜ê³ ì í•œë‹¤ë©´ h=5ë¡œ ì§€ì •ê°€ëŠ¥
 
 kingstimeseriesforecasts<-forecast.Arima(kingstimeseriesARIMA,h=5)
 kingstimeseriesforecasts
 
-# ¹Ì·¡ ¿¹Ãø¿¡ ´ëÇÑ µµÇ¥ ±×¸®±â
+# ë¯¸ë˜ ì˜ˆì¸¡ì— ëŒ€í•œ ë„í‘œ ê·¸ë¦¬ê¸°
 
 plot.forecast(kingstimeseriesforecasts)
 
@@ -458,7 +458,7 @@ plot.forecast(kingstimeseriesforecasts)
 
 #------------------------------------------------------------------
 # decompose seasonal data
-# "´º¿å¿¡¼­ 1946³â 1¿ùºÎÅÍ 1959³â 12¿ù±îÁö ¿ùº° Ãâ»ıÀÚ ¼ö µ¥ÀÌÅÍ
+# "ë‰´ìš•ì—ì„œ 1946ë…„ 1ì›”ë¶€í„° 1959ë…„ 12ì›”ê¹Œì§€ ì›”ë³„ ì¶œìƒì ìˆ˜ ë°ì´í„°
 #-------------------------------------------------------------------
 
 
@@ -466,20 +466,20 @@ plot.forecast(kingstimeseriesforecasts)
 births <- scan("http://robjhyndman.com/tsdldata/data/nybirths.dat")
 births
 
-#¿ùº° µ¥ÀÌÅÍ ÇüÅÂÀÇ ½Ã°è¿­ÀÚ·á·Î º¯È¯
-birthstimeseries <- ts(births, frequency=12, start=c(1946, 1))        
+#ì›”ë³„ ë°ì´í„° í˜•íƒœì˜ ì‹œê³„ì—´ìë£Œë¡œ ë³€í™˜
+birthstimeseries <- ts(births, frequency=12, start=c(1946, 1))
 birthstimeseries
-                   
-#¿ùº° ½Ã°è¿­ ÀÚ·á¸¦ plot.ts ÇÔ¼ö·Î µµ½ÄÈ­
-plot.ts(birthstimeseries) 
-                       
-#--- °èÀıÁ¤À» ¶ç´Â ½Ã°è¿­ ÀÚ·áÀÓ
-#--- 1~3¿ù¿¡´Â Ãâ»ıÀÚ ¼ö°¡ Áõ°¡ÇÏ°í ÀÌÈÄ ´Ù½Ã ¶³¾îÁö´Ù°¡
-#--- 9~12¿ù¿¡ ´Ù½Ã Áõ°¡
-#--- °èÀı¼ºÀ» ¶ç´Â ½Ã°è¿­ÀÚ·á´Â °æÇâ¼º, °èÀı¼º, ºÒ±ÔÄ¢¼º ¿ä¼Ò·Î ±¸¼ºµÊ
-€
-# ½Ã°è¿­ ÀÚ·á¸¦ ¿ä¼Òº°·Î ºĞÇØÇÏ±â
-birthstimeseriescomponents <- decompose(birthstimeseries)               
+
+#ì›”ë³„ ì‹œê³„ì—´ ìë£Œë¥¼ plot.ts í•¨ìˆ˜ë¡œ ë„ì‹í™”
+plot.ts(birthstimeseries)
+
+#--- ê³„ì ˆì •ì„ ë„ëŠ” ì‹œê³„ì—´ ìë£Œì„
+#--- 1~3ì›”ì—ëŠ” ì¶œìƒì ìˆ˜ê°€ ì¦ê°€í•˜ê³  ì´í›„ ë‹¤ì‹œ ë–¨ì–´ì§€ë‹¤ê°€
+#--- 9~12ì›”ì— ë‹¤ì‹œ ì¦ê°€
+#--- ê³„ì ˆì„±ì„ ë„ëŠ” ì‹œê³„ì—´ìë£ŒëŠ” ê²½í–¥ì„±, ê³„ì ˆì„±, ë¶ˆê·œì¹™ì„± ìš”ì†Œë¡œ êµ¬ì„±ë¨
+Â€
+# ì‹œê³„ì—´ ìë£Œë¥¼ ìš”ì†Œë³„ë¡œ ë¶„í•´í•˜ê¸°
+birthstimeseriescomponents <- decompose(birthstimeseries)
 plot(birthstimeseriescomponents)
 
 birthstimeseriescomponents$x
@@ -488,60 +488,60 @@ birthstimeseriescomponents$seasonal
 birthstimeseriescomponents$random
 
 
-# ½Ã°è¿­ ÀÚ·á¿¡¼­ °èÁ¤¼º ¿ä¼Ò¸¦ Á¦°ÅÇÏ±â
+# ì‹œê³„ì—´ ìë£Œì—ì„œ ê³„ì •ì„± ìš”ì†Œë¥¼ ì œê±°í•˜ê¸°
 birthstimeseries_seasonally_adjusted<-birthstimeseries -birthstimeseriescomponents$seasonal
 plot(birthstimeseries_seasonally_adjusted)
 
 
-#Â÷ºĞÇÏ¿© Á¤»ó¼º È®ÀÎÇÏ±â (difference)
+#ì°¨ë¶„í•˜ì—¬ ì •ìƒì„± í™•ì¸í•˜ê¸° (difference)
 
-# diff ÇÔ¼ö¸¦ È°¿ëÇÏ¿© µ¥ÀÌÅÍ Â÷ºĞÇÏ±â
+# diff í•¨ìˆ˜ë¥¼ í™œìš©í•˜ì—¬ ë°ì´í„° ì°¨ë¶„í•˜ê¸°
 births_adjusted<-birthstimeseries_seasonally_adjusted
 births_adjusted_diff1 <- diff(births_adjusted, differences = 1)
 
 
-#1Â÷ Â÷ºĞÇÑ °á°ú, Æò±Õ°ú ºĞ»êÀÌ ½Ã°£¿¡ ÀÇÁ¸ÇÏÁö ¾Ê´Â °ÍÀ¸·Î °¡Á¤ÇÏ°í ÁøÇà
-plot.ts(births_adjusted_diff1)          
+#1ì°¨ ì°¨ë¶„í•œ ê²°ê³¼, í‰ê· ê³¼ ë¶„ì‚°ì´ ì‹œê°„ì— ì˜ì¡´í•˜ì§€ ì•ŠëŠ” ê²ƒìœ¼ë¡œ ê°€ì •í•˜ê³  ì§„í–‰
+plot.ts(births_adjusted_diff1)
 
 mean(births_adjusted_diff1)
 sd(births_adjusted_diff1)
 
 
-# ARIMA ¸ğµ¨ °áÁ¤ÇÏ±â ARIMA(p, 1, q)
+# ARIMA ëª¨ë¸ ê²°ì •í•˜ê¸° ARIMA(p, 1, q)
 
-# acfÇÔ¼ö¿Í pacf ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© ¸ğÇü °áÁ¤ÇÏ±â
-
-
-acf(births_adjusted_diff1, lag.max=100)          #1Â÷ Â÷ºĞÇÑ µ¥ÀÌÅÍ·Î (ACF) È®ÀÎ
-
-pacf(births_adjusted_diff1, lag.max=100)         #1Â÷ Â÷ºĞÇÑ µ¥ÀÌÅÍ·Î (PACF) È®ÀÎ
+# acfí•¨ìˆ˜ì™€ pacf í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ëª¨í˜• ê²°ì •í•˜ê¸°
 
 
+acf(births_adjusted_diff1, lag.max=100)          #1ì°¨ ì°¨ë¶„í•œ ë°ì´í„°ë¡œ (ACF) í™•ì¸
 
-# forecast package ¿¡ ³»ÀåµÈ auto.arima ÇÔ¼ö¸¦ ÀÌ¿ëÇÑ ¸ğÇü Ã£±â
-
-auto.arima(births)                       
-#--- ARIMA(1, 1, 0) À» °¡Àå ÀûÀıÇÑ ¸ğÇüÀ¸·Î ¼±ÅÃ
+pacf(births_adjusted_diff1, lag.max=100)         #1ì°¨ ì°¨ë¶„í•œ ë°ì´í„°ë¡œ (PACF) í™•ì¸
 
 
-#  ARIMA ¸ğÇüÀ» ÅëÇØ ¹Ì·¡ ¿¹ÃøÇÏ±â 
-# ARIMA¸ğÇüÀ¸·Î µ¥ÀÌÅÍ º¸Á¤ÇÏ±â(fitting)
+
+# forecast package ì— ë‚´ì¥ëœ auto.arima í•¨ìˆ˜ë¥¼ ì´ìš©í•œ ëª¨í˜• ì°¾ê¸°
+
+auto.arima(births)
+#--- ARIMA(1, 1, 0) ì„ ê°€ì¥ ì ì ˆí•œ ëª¨í˜•ìœ¼ë¡œ ì„ íƒ
+
+
+#  ARIMA ëª¨í˜•ì„ í†µí•´ ë¯¸ë˜ ì˜ˆì¸¡í•˜ê¸°
+# ARIMAëª¨í˜•ìœ¼ë¡œ ë°ì´í„° ë³´ì •í•˜ê¸°(fitting)
 
 birthstimeseriesARIMA<- arima(birthstimeseries, order=c(1, 1, 0))
 birthstimeseriesARIMA
 
-# forecast.Arima ÇÔ¼ö¸¦ ÅëÇØ ¹Ì·¡ ¿¹ÃøÇÏ±â
+# forecast.Arima í•¨ìˆ˜ë¥¼ í†µí•´ ë¯¸ë˜ ì˜ˆì¸¡í•˜ê¸°
 
 birthstimeseriesforecasts<-forecast.Arima(birthstimeseriesARIMA)
 birthstimeseriesforecasts
 
-# ¹Ì·¡ ¿¹Ãø¿¡ ´ëÇÑ µµÇ¥ ±×¸®±â
+# ë¯¸ë˜ ì˜ˆì¸¡ì— ëŒ€í•œ ë„í‘œ ê·¸ë¦¬ê¸°
 par(mfrow=c(2,1))
 plot.forecast(birthstimeseriesforecasts)
 
 
 
-# forecast ÇÔ¼ö¸¦ È°¿ëÇÑ ½Ã°è¿­ ±¸ÇÏ±â
+# forecast í•¨ìˆ˜ë¥¼ í™œìš©í•œ ì‹œê³„ì—´ êµ¬í•˜ê¸°
 
 forecast(birthstimeseries, h=12)
 plot(forecast(birthstimeseries, h=12))
@@ -554,20 +554,20 @@ plot(forecast(birthstimeseries, h=12))
 
 
 #-----------------------------------------------------------------------------
-#--- "1987³â 1¿ùºÎÅÍ 1993³â 12¿ù±îÁö ºñÄ¡¸®Á¶Æ® ±â³äÇ° ¸ÅÀåÀÇ ¸ÅÃâ¾×"
+#--- "1987ë…„ 1ì›”ë¶€í„° 1993ë…„ 12ì›”ê¹Œì§€ ë¹„ì¹˜ë¦¬ì¡°íŠ¸ ê¸°ë…í’ˆ ë§¤ì¥ì˜ ë§¤ì¶œì•¡"
 #-----------------------------------------------------------------------------
 
 
 souvenir <- scan("http://robjhyndman.com/tsdldata/data/fancy.dat")
-souvenir 
+souvenir
 
-# ±â³äÇ° ÀÚ·á¸¦ ½Ã°è¿­ ÀÚ·á·Î º¯È¯
-souvenirtimeseries <- ts(souvenir, frequency=12, start=c(1987, 1))     
+# ê¸°ë…í’ˆ ìë£Œë¥¼ ì‹œê³„ì—´ ìë£Œë¡œ ë³€í™˜
+souvenirtimeseries <- ts(souvenir, frequency=12, start=c(1987, 1))
 souvenirtimeseries
-                   
-plot.ts(souvenirtimeseries)                         
 
-#ÀÚ·áÀÇ ºĞ»êÀÌ ÀÏÁ¤ÇÏÁö ¾ÊÀº ºñÁ¤»ó¼º ½Ã°è¿­-->º¯È¯À» ÅëÇØ Á¤¼ºÈ­
+plot.ts(souvenirtimeseries)
+
+#ìë£Œì˜ ë¶„ì‚°ì´ ì¼ì •í•˜ì§€ ì•Šì€ ë¹„ì •ìƒì„± ì‹œê³„ì—´-->ë³€í™˜ì„ í†µí•´ ì •ì„±í™”
 logsouvenirtimeseries<-log(souvenirtimeseries)
 plot.ts(logsouvenirtimeseries)
 
@@ -579,9 +579,9 @@ plot.ts(logsouvenirtimeseries)
 
 
 
-#Â÷ºĞÇÏ¿© Á¤»ó¼º È®ÀÎÇÏ±â (difference)
+#ì°¨ë¶„í•˜ì—¬ ì •ìƒì„± í™•ì¸í•˜ê¸° (difference)
 
-# diff ÇÔ¼ö¸¦ È°¿ëÇÏ¿© µ¥ÀÌÅÍ Â÷ºĞÇÏ±â
+# diff í•¨ìˆ˜ë¥¼ í™œìš©í•˜ì—¬ ë°ì´í„° ì°¨ë¶„í•˜ê¸°
 
 logsouvenirtimeseriesdiff1 <- diff(logsouvenirtimeseries, differences = 1)
 logsouvenirtimeseriesdiff2 <- diff(logsouvenirtimeseries, differences = 2)
@@ -591,9 +591,9 @@ logsouvenirtimeseriesdiff2
 logsouvenirtimeseriesdiff3
 
 
-par(mfrow=c(2,2)) 
+par(mfrow=c(2,2))
 plot.ts(logsouvenirtimeseries)
-plot.ts(logsouvenirtimeseriesdiff1)           #1Â÷ Â÷ºĞÇÑ °á°ú, Æò±Õ°ú ºĞ»êÀÌ ½Ã°£¿¡ ÀÇÁ¸ÇÏÁö ¾ÊÀ½
+plot.ts(logsouvenirtimeseriesdiff1)           #1ì°¨ ì°¨ë¶„í•œ ê²°ê³¼, í‰ê· ê³¼ ë¶„ì‚°ì´ ì‹œê°„ì— ì˜ì¡´í•˜ì§€ ì•ŠìŒ
 plot.ts(logsouvenirtimeseriesdiff2)
 plot.ts(logsouvenirtimeseriesdiff3)
 
@@ -602,39 +602,39 @@ mean(logsouvenirtimeseriesdiff1)
 sd(logsouvenirtimeseriesdiff1)
 
 
-# ARIMA ¸ğµ¨ °áÁ¤ÇÏ±â ARIMA(p, 1, q)
+# ARIMA ëª¨ë¸ ê²°ì •í•˜ê¸° ARIMA(p, 1, q)
 
-# acfÇÔ¼ö¿Í pacf ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© ¸ğÇü °áÁ¤ÇÏ±â
-
-
-acf(logsouvenirtimeseriesdiff1, lag.max=100)          #1Â÷ Â÷ºĞÇÑ µ¥ÀÌÅÍ·Î (ACF) È®ÀÎ
-
-pacf(logsouvenirtimeseriesdiff1, lag.max=100)         #1Â÷ Â÷ºĞÇÑ µ¥ÀÌÅÍ·Î (PACF) È®ÀÎ
+# acfí•¨ìˆ˜ì™€ pacf í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ëª¨í˜• ê²°ì •í•˜ê¸°
 
 
-# forecast package ¿¡ ³»ÀåµÈ auto.arima ÇÔ¼ö¸¦ ÀÌ¿ëÇÑ ¸ğÇü Ã£±â
+acf(logsouvenirtimeseriesdiff1, lag.max=100)          #1ì°¨ ì°¨ë¶„í•œ ë°ì´í„°ë¡œ (ACF) í™•ì¸
 
-auto.arima(souvenir)                       
-#--- ARIMA(1, 1, 1) À» °¡Àå ÀûÀıÇÑ ¸ğÇüÀ¸·Î ¼±ÅÃ
+pacf(logsouvenirtimeseriesdiff1, lag.max=100)         #1ì°¨ ì°¨ë¶„í•œ ë°ì´í„°ë¡œ (PACF) í™•ì¸
 
 
-#  ARIMA ¸ğÇüÀ» ÅëÇØ ¹Ì·¡ ¿¹ÃøÇÏ±â 
-# ARIMA¸ğÇüÀ¸·Î µ¥ÀÌÅÍ º¸Á¤ÇÏ±â(fitting)
+# forecast package ì— ë‚´ì¥ëœ auto.arima í•¨ìˆ˜ë¥¼ ì´ìš©í•œ ëª¨í˜• ì°¾ê¸°
+
+auto.arima(souvenir)
+#--- ARIMA(1, 1, 1) ì„ ê°€ì¥ ì ì ˆí•œ ëª¨í˜•ìœ¼ë¡œ ì„ íƒ
+
+
+#  ARIMA ëª¨í˜•ì„ í†µí•´ ë¯¸ë˜ ì˜ˆì¸¡í•˜ê¸°
+# ARIMAëª¨í˜•ìœ¼ë¡œ ë°ì´í„° ë³´ì •í•˜ê¸°(fitting)
 
 souvenirtimeseriesARIMA<- arima(souvenirtimeseries, order=c(1, 1, 1))
 souvenirtimeseriesARIMA
 
-# forecast.Arima ÇÔ¼ö¸¦ ÅëÇØ ¹Ì·¡ ¿¹ÃøÇÏ±â
+# forecast.Arima í•¨ìˆ˜ë¥¼ í†µí•´ ë¯¸ë˜ ì˜ˆì¸¡í•˜ê¸°
 
 souvenirtimeseriesforecasts<-forecast.Arima(souvenirtimeseriesARIMA)
 souvenirtimeseriesforecasts
 
-# ¹Ì·¡ ¿¹Ãø¿¡ ´ëÇÑ µµÇ¥ ±×¸®±â
+# ë¯¸ë˜ ì˜ˆì¸¡ì— ëŒ€í•œ ë„í‘œ ê·¸ë¦¬ê¸°
 
 plot.forecast(souvenirtimeseriesforecasts)
 
 
-# forecast ÇÔ¼ö¸¦ È°¿ëÇÑ ½Ã°è¿­ ±¸ÇÏ±â
+# forecast í•¨ìˆ˜ë¥¼ í™œìš©í•œ ì‹œê³„ì—´ êµ¬í•˜ê¸°
 
 forecast(souvenirtimeseries, h=12)
 plot(forecast(souvenirtimeseries, h=12))
@@ -642,29 +642,29 @@ plot(forecast(souvenirtimeseries, h=12))
 
 
 #--------------------------------------------------------------------------
-#   ºñÁ¤»ó½Ã°è¿­ÀÇ Â÷ºĞÀ» ÅëÇÑ ½Ã°è¿­ ºĞ¼®ÀÇ È°¿ë ¿¹2
+#   ë¹„ì •ìƒì‹œê³„ì—´ì˜ ì°¨ë¶„ì„ í†µí•œ ì‹œê³„ì—´ ë¶„ì„ì˜ í™œìš© ì˜ˆ2
 #
-#   1866³â¿¡¼­ 1911³â±îÁöÀÇ ¸Å³â ¿©¼ºÀÇ ½ºÄ¿Æ® Áö¸§±æÀÌ ÀÚ·á
+#   1866ë…„ì—ì„œ 1911ë…„ê¹Œì§€ì˜ ë§¤ë…„ ì—¬ì„±ì˜ ìŠ¤ì»¤íŠ¸ ì§€ë¦„ê¸¸ì´ ìë£Œ
 #--------------------------------------------------------------------------
 
 skirts <- scan("http://robjhyndman.com/tsdldata/roberts/skirts.dat", skip=5)
 
-# ½Ã°è¿­ ÀÚ·á·Î º¯È¯
-skirtstimeseries <- ts(skirts, start=c(1866))       
+# ì‹œê³„ì—´ ìë£Œë¡œ ë³€í™˜
+skirtstimeseries <- ts(skirts, start=c(1866))
 skirtstimeseries
-plot(skirtstimeseries)            
-#plot.ts(skirtstimeseries)  
-                     
-#½Ã°£¿¡ µû¸¥ Æò±ÕÀÌ ÀÏÁ¤ÇÏÁö ¾ÊÀ½
+plot(skirtstimeseries)
+#plot.ts(skirtstimeseries)
 
-# Æò±ÕÀÌ ÀÏÁ¤ÇÏÁö ¾ÊÀº ºñÁ¤»ó½Ã°è¿­ ->Â÷ºĞÀ» ÅëÇØ Á¤»óÈ­ (difference)
+#ì‹œê°„ì— ë”°ë¥¸ í‰ê· ì´ ì¼ì •í•˜ì§€ ì•ŠìŒ
+
+# í‰ê· ì´ ì¼ì •í•˜ì§€ ì•Šì€ ë¹„ì •ìƒì‹œê³„ì—´ ->ì°¨ë¶„ì„ í†µí•´ ì •ìƒí™” (difference)
 skirtstimeseriesdiff1 <- diff(skirtstimeseries, differences=1)
 skirtstimeseriesdiff2 <- diff(skirtstimeseries, differences=2)
 skirtstimeseriesdiff3 <- diff(skirtstimeseries, differences=3)
 
-par(mfrow=c(2,2)) 
+par(mfrow=c(2,2))
 plot.ts(skirtstimeseries)
-plot.ts(skirtstimeseriesdiff1)           #1Â÷ Â÷ºĞÇÑ °á°ú, Æò±Õ°ú ºĞ»êÀÌ ½Ã°£¿¡ ÀÇÁ¸ÇÏÁö ¾ÊÀ½
+plot.ts(skirtstimeseriesdiff1)           #1ì°¨ ì°¨ë¶„í•œ ê²°ê³¼, í‰ê· ê³¼ ë¶„ì‚°ì´ ì‹œê°„ì— ì˜ì¡´í•˜ì§€ ì•ŠìŒ
 plot.ts(skirtstimeseriesdiff2)
 plot.ts(skirtstimeseriesdiff3)
 
@@ -674,39 +674,39 @@ mean(skirtstimeseriesdiff1)
 sd(skirtstimeseriesdiff1)
 
 
-# ARIMA ¸ğµ¨ °áÁ¤ÇÏ±â ARIMA(p, 1, q)
+# ARIMA ëª¨ë¸ ê²°ì •í•˜ê¸° ARIMA(p, 1, q)
 
-# acfÇÔ¼ö¿Í pacf ÇÔ¼ö¸¦ »ç¿ëÇÏ¿© ¸ğÇü °áÁ¤ÇÏ±â
-
-
-acf(skirtstimeseriesdiff2, lag.max=20)          #1Â÷ Â÷ºĞÇÑ µ¥ÀÌÅÍ·Î (ACF) È®ÀÎ
-
-pacf(skirtstimeseriesdiff2, lag.max=20)         #1Â÷ Â÷ºĞÇÑ µ¥ÀÌÅÍ·Î (PACF) È®ÀÎ
+# acfí•¨ìˆ˜ì™€ pacf í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ ëª¨í˜• ê²°ì •í•˜ê¸°
 
 
-# forecast package ¿¡ ³»ÀåµÈ auto.arima ÇÔ¼ö¸¦ ÀÌ¿ëÇÑ ¸ğÇü Ã£±â
+acf(skirtstimeseriesdiff2, lag.max=20)          #1ì°¨ ì°¨ë¶„í•œ ë°ì´í„°ë¡œ (ACF) í™•ì¸
 
-auto.arima(skirts)                       
-#--- ARIMA(1, 2, 0) À» °¡Àå ÀûÀıÇÑ ¸ğÇüÀ¸·Î ¼±ÅÃ
+pacf(skirtstimeseriesdiff2, lag.max=20)         #1ì°¨ ì°¨ë¶„í•œ ë°ì´í„°ë¡œ (PACF) í™•ì¸
 
 
-#  ARIMA ¸ğÇüÀ» ÅëÇØ ¹Ì·¡ ¿¹ÃøÇÏ±â 
-# ARIMA¸ğÇüÀ¸·Î µ¥ÀÌÅÍ º¸Á¤ÇÏ±â(fitting)
+# forecast package ì— ë‚´ì¥ëœ auto.arima í•¨ìˆ˜ë¥¼ ì´ìš©í•œ ëª¨í˜• ì°¾ê¸°
+
+auto.arima(skirts)
+#--- ARIMA(1, 2, 0) ì„ ê°€ì¥ ì ì ˆí•œ ëª¨í˜•ìœ¼ë¡œ ì„ íƒ
+
+
+#  ARIMA ëª¨í˜•ì„ í†µí•´ ë¯¸ë˜ ì˜ˆì¸¡í•˜ê¸°
+# ARIMAëª¨í˜•ìœ¼ë¡œ ë°ì´í„° ë³´ì •í•˜ê¸°(fitting)
 
 skirtstimeseriesARIMA<- arima(skirtstimeseries, order=c(1, 2, 0))
 skirtstimeseriesARIMA
 
-# forecast.Arima ÇÔ¼ö¸¦ ÅëÇØ ¹Ì·¡ ¿¹ÃøÇÏ±â
+# forecast.Arima í•¨ìˆ˜ë¥¼ í†µí•´ ë¯¸ë˜ ì˜ˆì¸¡í•˜ê¸°
 
 skirtstimeseriesforecasts<-forecast.Arima(skirtstimeseriesARIMA)
 skirtstimeseriesforecasts
 
-# ¹Ì·¡ ¿¹Ãø¿¡ ´ëÇÑ µµÇ¥ ±×¸®±â
+# ë¯¸ë˜ ì˜ˆì¸¡ì— ëŒ€í•œ ë„í‘œ ê·¸ë¦¬ê¸°
 
 plot.forecast(skirtstimeseriesforecasts)
 
 
-# forecast ÇÔ¼ö¸¦ È°¿ëÇÑ ½Ã°è¿­ ±¸ÇÏ±â
+# forecast í•¨ìˆ˜ë¥¼ í™œìš©í•œ ì‹œê³„ì—´ êµ¬í•˜ê¸°
 
 forecast(skirtstimeseries, h=12)
 plot(forecast(skirtstimeseries, h=12))
@@ -714,46 +714,46 @@ plot(forecast(skirtstimeseries, h=12))
 
 
 #-----------------------------------------------------------------------------
-#   Á¤»ó½Ã°è¿­ÀÇ ¿¹ 2  
+#   ì •ìƒì‹œê³„ì—´ì˜ ì˜ˆ 2
 #
-#   1500³â ºÎÅÍ 1969³â±îÁöÀÇ È­»êÆø¹ß ¸ÕÁö·®
+#   1500ë…„ ë¶€í„° 1969ë…„ê¹Œì§€ì˜ í™”ì‚°í­ë°œ ë¨¼ì§€ëŸ‰
 #-----------------------------------------------------------------------------
 
 
 volcanodust <- scan("http://robjhyndman.com/tsdldata/annual/dvi.dat", skip=1)
-volcanodustseries <- ts(volcanodust, start=c(1500))    
+volcanodustseries <- ts(volcanodust, start=c(1500))
 volcanodustseries
-plot(volcanodustseries)                             
-#plot.ts(volcanodustseries)  
+plot(volcanodustseries)
+#plot.ts(volcanodustseries)
 
-# Æò±Õ°ú ºĞ»êÀÌ ½Ã°£¿¡ µû¶ó ÀÇÁ¸ÇÏÁö ¾ÊÀ¸¹Ç·Î Á¤»ó¼ºÀ» ¸¸Á·
-# Â÷ºĞÀÌ³ª º¯È¯ ¾øÀÌ ½Ã°è¿­ ºĞ¼® ÁøÇà                       
+# í‰ê· ê³¼ ë¶„ì‚°ì´ ì‹œê°„ì— ë”°ë¼ ì˜ì¡´í•˜ì§€ ì•Šìœ¼ë¯€ë¡œ ì •ìƒì„±ì„ ë§Œì¡±
+# ì°¨ë¶„ì´ë‚˜ ë³€í™˜ ì—†ì´ ì‹œê³„ì—´ ë¶„ì„ ì§„í–‰
 
-acf(volcanodustseries, lag.max=20)              
+acf(volcanodustseries, lag.max=20)
 acf(volcanodustseries, lag.max=20, plot=FALSE)
-#--- lag = 4ºÎÅÍ Á¡¼±À» ÃÊ°úÇÏÁö ¾ÊÀ¸¹Ç·Î Àı´ÜÁ¡ÀÌ 4 -> MA(3) ¸ğÇü
+#--- lag = 4ë¶€í„° ì ì„ ì„ ì´ˆê³¼í•˜ì§€ ì•Šìœ¼ë¯€ë¡œ ì ˆë‹¨ì ì´ 4 -> MA(3) ëª¨í˜•
 
-pacf(volcanodustseries, lag.max=20)              
+pacf(volcanodustseries, lag.max=20)
 pacf(volcanodustseries, lag.max=20, plot=FALSE)
-#--- lag = 3ºÎÅÍ Á¡¼±À» ÃÊ°úÇÏÁö ¾ÊÀ¸¹Ç·Î Àı´ÜÁ¡ÀÌ 3 -> AR(2) ¸ğÇü
+#--- lag = 3ë¶€í„° ì ì„ ì„ ì´ˆê³¼í•˜ì§€ ì•Šìœ¼ë¯€ë¡œ ì ˆë‹¨ì ì´ 3 -> AR(2) ëª¨í˜•
 
 auto.arima(volcanodustseries)
-#--- ARIMA(1, 0, 2) ¸ğÇü
+#--- ARIMA(1, 0, 2) ëª¨í˜•
 
-#--- MA(3), AR(2), ARMA(1,2) ¸ğÇüÁß °¡Àå °£´ÜÇÑ ¸ğÇüÀÎ AR(2)À» ¼±Á¤
+#--- MA(3), AR(2), ARMA(1,2) ëª¨í˜•ì¤‘ ê°€ì¥ ê°„ë‹¨í•œ ëª¨í˜•ì¸ AR(2)ì„ ì„ ì •
 
-#--- AR(2)¸ğÇüÀ¸·Î ½Ã°è¿­ º¸Á¤ (fitting)
+#--- AR(2)ëª¨í˜•ìœ¼ë¡œ ì‹œê³„ì—´ ë³´ì • (fitting)
 volcanodustseries_ARIMA <- arima(volcanodustseries, order=c(2, 0, 0))
 
-#  ¹Ì·¡ÀÇ °ªÀ» ¿¹ÃøÇÏ±â
+#  ë¯¸ë˜ì˜ ê°’ì„ ì˜ˆì¸¡í•˜ê¸°
 volcanodustseries_forecast <- forecast.Arima(volcanodustseries_ARIMA, h=31)
-plot.forecast(volcanodustseries_forecast)             
+plot.forecast(volcanodustseries_forecast)
 volcanodustseries_forecast
 
 
 #############################################
 #
-#   °è·®Àû  MDS(´ÙÂ÷¿øÃ´µµ¹ı)
+#   ê³„ëŸ‰ì   MDS(ë‹¤ì°¨ì›ì²™ë„ë²•)
 #
 #############################################
 
@@ -771,7 +771,7 @@ mt<-mtcars
 mt.x<-as.matrix(mt[,-1])
 mt.dist<-dist(mt.x)
 loc<-cmdscale(mt.dist)
-plot(loc[,1],loc[,2],type="n",asp=1,main="Metric MDS") 
+plot(loc[,1],loc[,2],type="n",asp=1,main="Metric MDS")
 text(loc[,1],loc[,2],rownames(loc),cex=0.7)
 abline(v=0, h=0, lty=2, lwd=0.5)
 
@@ -813,15 +813,14 @@ abline(v=0, h=0, lty=2, lwd=0.5)
 
 #############################################
 #
-#   ÁÖ¼ººĞºĞ¼®
+#   ì£¼ì„±ë¶„ë¶„ì„
 #
 #############################################
-
 
 library(datasets)
 data(USArrests)
 pairs(USArrests, panel=panel.smooth,
-                     main="USArrests data")
+      main="USArrests data")
 
 US.prin<-princomp(USArrests,cor=TRUE)
 summary(US.prin)
@@ -837,146 +836,145 @@ biplot(US.prin)
 
 #############################################
 #
-#   Â÷¿øÃà¼Ò PCA ¿¹Á¦ 2
+#   ì°¨ì›ì¶•ì†Œ PCA ì˜ˆì œ 2
 #
 #############################################
 
-# csv ÆÄÀÏ ºÒ·¯¿À±â (file importing)
+# csv íŒŒì¼ ë¶ˆëŸ¬ì˜¤ê¸° (file importing)
 f_2007 <- read.csv("c:/r_class/finance_2007.csv",
-                    header = TRUE, stringsAsFactors = FALSE)
- # V1 : ÃÑÀÚº»¼øÀÌÀÍÀ²
- # V2 : ÀÚ±âÀÚº»¼øÀÌÀÍÀ²
- # V3 : ÀÚ±âÀÚº»ºñÀ²
- # V4 : ºÎÃ¤ºñÀ²
- # V5 : ÀÚ±âÀÚº»È¸ÀüÀ²
+                   header = TRUE, stringsAsFactors = FALSE)
+# V1 : ì´ìë³¸ìˆœì´ìµìœ¨
+# V2 : ìê¸°ìë³¸ìˆœì´ìµìœ¨
+# V3 : ìê¸°ìë³¸ë¹„ìœ¨
+# V4 : ë¶€ì±„ë¹„ìœ¨
+# V5 : ìê¸°ìë³¸íšŒì „ìœ¨
 
 
 
- # Ç¥ÁØÈ­ º¯È¯ (standardization)
-f_2007 <- transform(f_2007,  
-                             V1_s = scale(V1), 
-                             V2_s = scale(V2), 
-                             V3_s = scale(V3), 
-                             V4_s = scale(V4),
-                             V5_s = scale(V5))
+# í‘œì¤€í™” ë³€í™˜ (standardization)
+f_2007 <- transform(f_2007,
+                    V1_s = scale(V1),
+                    V2_s = scale(V2),
+                    V3_s = scale(V3),
+                    V4_s = scale(V4),
+                    V5_s = scale(V5))
 
 
 
 
- # variable selection
- f_2007_2 <-f_2007[,c("company", "V1_s", "V2_s", "V3_s", "V4_s", "V5_s")]
- 
- # Correlation analysis
- cor(f_2007_2[,-1])
- round(cor(f_2007_2[,-1]), digits=3) # ¹İ¿Ã¸²
- 
- # Scatter plot matrix
- plot(f_2007_2[,-1])
- 
- 
- # ÁÖ¼ººĞºĞ¼® PCA(Principal Component Analysis)
- secu_prcomp <- prcomp(f_2007_2[,c(2:6)]) # Ã¹¹øÂ° º¯¼ö È¸»ç¸íÀº »©°í ºĞ¼®
- 
- summary(secu_prcomp)
- 
- print(secu_prcomp)
- 
- 
- # Scree Plot
- plot(prcomp(f_2007_2[,c(2:6)]), type="l",
+# variable selection
+f_2007_2 <-f_2007[,c("company", "V1_s", "V2_s", "V3_s", "V4_s", "V5_s")]
+
+# Correlation analysis
+cor(f_2007_2[,-1])
+round(cor(f_2007_2[,-1]), digits=3) # ë°˜ì˜¬ë¦¼
+
+# Scatter plot matrix
+plot(f_2007_2[,-1])
+
+
+# ì£¼ì„±ë¶„ë¶„ì„ PCA(Principal Component Analysis)
+secu_prcomp <- prcomp(f_2007_2[,c(2:6)]) # ì²«ë²ˆì§¸ ë³€ìˆ˜ íšŒì‚¬ëª…ì€ ë¹¼ê³  ë¶„ì„
+
+summary(secu_prcomp)
+
+print(secu_prcomp)
+
+
+# Scree Plot
+plot(prcomp(f_2007_2[,c(2:6)]), type="l",
      sub = "Scree Plot")
- 
- # Biplot
- biplot(prcomp(f_2007_2[,c(2:6)]), cex = c(0.7, 0.8))
- 
- 
- 
- # °üÃøÄ¡º° ÁÖ¼ººĞ1, ÁÖ¼ººĞ2 Á¡¼ö °è»ê(PC1 score, PC2 score)
- secu_pc1 <- predict(secu_prcomp)[,1]
- secu_pc2 <- predict(secu_prcomp)[,2]
 
- # °üÃøÄ¡º° ÀÌ¸§ ¸ÅÇÎ(rownames mapping)
- text(secu_pc1, secu_pc2, labels = f_2007_2$company, 
-      cex = 0.7, pos = 3, col = "blue")
- 
+# Biplot
+biplot(prcomp(f_2007_2[,c(2:6)]), cex = c(0.7, 0.8))
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  ###########################################################
-  ## PCA (Principal Component Analysis)
-  ## User Defined Function
-  ##  - finding PC k which Cummulative Proportion is over 0.8
-  ###########################################################
- 
-    pca <- function(dataset){
-        pc = prcomp(dataset, scale = TRUE)
-        
-          k = 0
-          R = 0
-        
-            while(R < 0.8) {
-                k = k + 1
-                R = sum(pc[[1]][1:k]^2)/sum(pc[[1]]^2)
-            
-                  cat("When number of Principal Component(k) is ", k, 
-                                ", Cummulative Proportion(R) is ", R, "\n", "\n", sep="")
-              }
-          
-            SelectedDataSet = pc[[5]][,1:k]
-            return(SelectedDataSet)
-          }
-  
-    pca(f_2007_2[,c(2:6)])
-    
-    
-    
-    
-    ## PCA for College data
-    data(College)
-    cdat = College[,2:18]
-    dim(cdat)
-    names(cdat)
-    
-    ## PCA
-    pc.col <- princomp(cdat) #default - centers and scales
-    
-    #default R plots with princomp
-    biplot(pc.col, cex=.7)
-    screeplot(pc.col)
-    
-    # #scatter plots - patterns among observations
-    i = 1; j = 2;
-    plot(pc.col$scores[,i],pc.col$scores[,j],pch=16,cex=.2)
-    text(pc.col$scores[,i],pc.col$scores[,j],rownames(cdat),cex=.6)
-    
-    #look at a particular college
-    ind = match("Harvard University",rownames(cdat))
-    text(pc.col$scores[ind,i],pc.col$scores[ind,j],rownames(cdat)[ind],cex=.7,col=2)
-    
-    #loadings - variables that contribute to these patterns
-    par(mfrow=c(2,1))
-    barplot(pc.col$loadings[,1],cex.names=.6,main="PC 1 Loadings")
-    barplot(pc.col$loadings[,2],cex.names=.6,main="PC 2 Loadings")
-    
-    #variance explained
-    screeplot(pc.col)
-    
-    varex <- 100*pc.col$sdev^2/sum(pc.col$sdev^2)
-    plot(varex,type="l",ylab="% Variance Explained",xlab="Component")
-    
-    #cumulative variance explained
-    cvarex = NULL
-    for(i in 1:ncol(cdat)){
-      cvarex[i] = sum(varex[1:i])
-    }
-    plot(cvarex,type="l",ylab="Cumulative Variance Explained",xlab="Component")
- 
+
+
+# ê´€ì¸¡ì¹˜ë³„ ì£¼ì„±ë¶„1, ì£¼ì„±ë¶„2 ì ìˆ˜ ê³„ì‚°(PC1 score, PC2 score)
+secu_pc1 <- predict(secu_prcomp)[,1]
+secu_pc2 <- predict(secu_prcomp)[,2]
+
+# ê´€ì¸¡ì¹˜ë³„ ì´ë¦„ ë§¤í•‘(rownames mapping)
+text(secu_pc1, secu_pc2, labels = f_2007_2$company,
+     cex = 0.7, pos = 3, col = "blue")
+
+
+
+
+
+
+
+
+
+
+
+
+
+###########################################################
+## PCA (Principal Component Analysis)
+## User Defined Function
+##  - finding PC k which Cummulative Proportion is over 0.8
+###########################################################
+
+pca <- function(dataset){
+  pc = prcomp(dataset, scale = TRUE)
+
+  k = 0
+  R = 0
+
+  while(R < 0.8) {
+    k = k + 1
+    R = sum(pc[[1]][1:k]^2)/sum(pc[[1]]^2)
+
+    cat("When number of Principal Component(k) is ", k,
+        ", Cummulative Proportion(R) is ", R, "\n", "\n", sep="")
+  }
+
+  SelectedDataSet = pc[[5]][,1:k]
+  return(SelectedDataSet)
+}
+
+pca(f_2007_2[,c(2:6)])
+
+
+
+
+## PCA for College data
+data(College)
+cdat = College[,2:18]
+dim(cdat)
+names(cdat)
+
+## PCA
+pc.col <- princomp(cdat) #default - centers and scales
+
+#default R plots with princomp
+biplot(pc.col, cex=.7)
+screeplot(pc.col)
+
+# #scatter plots - patterns among observations
+i = 1; j = 2;
+plot(pc.col$scores[,i],pc.col$scores[,j],pch=16,cex=.2)
+text(pc.col$scores[,i],pc.col$scores[,j],rownames(cdat),cex=.6)
+
+#look at a particular college
+ind = match("Harvard University",rownames(cdat))
+text(pc.col$scores[ind,i],pc.col$scores[ind,j],rownames(cdat)[ind],cex=.7,col=2)
+
+#loadings - variables that contribute to these patterns
+par(mfrow=c(2,1))
+barplot(pc.col$loadings[,1],cex.names=.6,main="PC 1 Loadings")
+barplot(pc.col$loadings[,2],cex.names=.6,main="PC 2 Loadings")
+
+#variance explained
+screeplot(pc.col)
+
+varex <- 100*pc.col$sdev^2/sum(pc.col$sdev^2)
+plot(varex,type="l",ylab="% Variance Explained",xlab="Component")
+
+#cumulative variance explained
+cvarex = NULL
+for(i in 1:ncol(cdat)){
+  cvarex[i] = sum(varex[1:i])
+}
+plot(cvarex,type="l",ylab="Cumulative Variance Explained",xlab="Component")

@@ -5,7 +5,6 @@ data("ChickWeight")
 colnames(ChickWeight)
 
 "______ 자료유형 분석 _________"
-ChickWeight
 head(ChickWeight)
 summary(ChickWeight)
 length(ChickWeight$weight)
@@ -14,13 +13,11 @@ plot(ChickWeight)
 # ChickWeight$Diet
 # ChickWeight$Chick
 
-x <- ChickWeight[ChickWeight$Diet==1,]$weight
-y <- ChickWeight[ChickWeight$Diet==1,]$Time
+y <- ChickWeight[ChickWeight$Diet==1,]$weight
+x <- ChickWeight[ChickWeight$Diet==1,]$Time
 
-
-m1 = lm(y~x, data=ChickWeight)
-plot(y,x)
-
+plot(x,y)
+m1 = lm(formula=x~y, data=ChickWeight)
 abline(m1, lty="dotted")
 
 summary(m1)
