@@ -2,6 +2,8 @@
 #  1. R - Environments
 #^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 # *.Rhistory
+
 *.Rproj.user/
 *.RData
 .Rproj.user
+.Rhistory

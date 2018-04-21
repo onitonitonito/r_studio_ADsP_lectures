@@ -8,3 +8,5 @@ data("nodal")
 colnames(nodal)
 head(nodal)
 summary(nodal)
+
+plot(nodal)

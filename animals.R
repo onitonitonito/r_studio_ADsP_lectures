@@ -2,14 +2,54 @@
 (1) 최빈값 : 가장 자주 출현하는 빈도의 데이터 값
 (2) 평균값 : 모든 값을 레코드 갯수로 나눈 평균값
 (3) 중앙값 : median - 순서대로 일렬로 세웠을때 중앙 포지션
- - 1/4 값(1st. Qu) = 25% 값
- - 1/2 값(2nd. Qu) = median 값   ... first quantile
- - 3/4 값(3rd. QU)
+- 1/4 값(1st. Qu) = 25% 값
+- 1/2 값(2nd. Qu) = median 값   ... first quantile
+- 3/4 값(3rd. QU)
 (4) 퍼센타일(%) =
 "
-library(MASS)      # MASS 라이브러리를 불러온다.
 
-Animals
+# ------- 변수초기화 / 워킹폴더 세팅 ---------------------------
+rm(list = ls())
+setwd("~/Github/r_studio_ADsP_lectures/_static")
+# --------------------------------------------------------------
+
+
+library(MASS)      # MASS 라이브러리를 불러온다. -- 애니멀 데이터 세팅
+
+head(Animals)      # 칼럼=(body/brain),레코드=Name
+
+x <- Animals$body
+y <- Animals$brain
+
+
+plot(y~x)               # 비정상 - x/y축 범위가 너무크다
+
+plot(Animals$body)      # (x)바디의 범주를 확인해 보면 튀는 값이 '1'개 있음
+plot(log(Animals$body)) # (X)바디 범주에 로그함수()를 적용하여 {정상화}
+
+plot(Animals$brain)     # (y)두뇌의 범주를 확인해 보니, 2개의 튀는값 존재
+plot(log(Animals$brain))
+
+brain_ex <- Animals$brain[Animals$brain >= 2000]
+body_ex <- Animals$body[Animals$body >= 20000]
+
+length(brain_ex)
+length(body_ex)
+
+
+
+
+plot(log(y) ~ log(x))
+
+m1 <- lm(y~x, data = Animals)
+m1$coefficients
+
+"
+(Intercept)             x
+5.763724e+02 -4.326372e-04 "
+
+abline(m1$coefficients, lty="dotted")
+
 summary(Animals$body)
 summary(Animals$brain)
 
@@ -33,6 +73,7 @@ summary(Animals$brain)
 plot(Animals$brain~Animals$body)             # Y축 ~ X축 순서로 플롯입력
 plot(log(Animals$brain)~log(Animals$body))   # 맥스값이 너무 클경우 로그스케일로 변환
 
+
 "(이상치 3개 발견! - 공룡)  .. 경향에 반하는 3개 데이터를 포함해서 회귀분석을 실시한다.
  이상치를 제외하는것 보다, 이상치(공룡)을 포함하면-- 기울기가 낮아진다."
 
@@ -54,10 +95,11 @@ abline(m1$coefficients, lty="dotted")
 m1$coefficients
 
 
-sink("fileout_3.rdb", append=TRUE)
-pdf("fileout_3.pdf")
+# --------------------------------------------------------------------
+# sink("fileout_3.txt", append=TRUE)
+# pdf("fileout_3.pdf")
+# close function
+# dev.off()
+# sink()
+# --------------------------------------------------------------------
 
-dev.off()
-sink()
-
-getwd()

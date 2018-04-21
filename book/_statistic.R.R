@@ -1,7 +1,14 @@
+init <- function()
+  {
+    rm(list=ls())
+    setwd("~/Github/r_studio_ADsP_lectures")
+    getwd()
+  }
 
 ###-----------------------------------------------------------------------------
 ### 1.descriptive statistics
 ###-----------------------------------------------------------------------------
+init()
 
 ?iris
 data(iris)
@@ -20,6 +27,7 @@ min(Se_L)
 
 install.packages("MASS")
 library(MASS)
+
 data(Animals, package="MASS")
 Animals
 
@@ -53,6 +61,7 @@ quantile(An_b)
 ###-----------------------------------------------------------------------------
 ### 3. correlation analysis
 ###-----------------------------------------------------------------------------
+init()
 
 1+1
 14-10
@@ -60,20 +69,22 @@ quantile(An_b)
 28/7
 38%%7
 
-oddcount<-function(x){
-  k<-0
-  for(n in x){
-    if(n%%2==1)k<-k+1
+oddcount <- function(x) {
+    k <- 0
+    for(n in x) {
+        if(n%%2==1) k <- k + 1
+      }
+    return(k)
   }
-  return(k)
-}
-
 
 oddcount(c(1,3,4))
-
 oddcount(c(1,2,3,4,5,6,7))
 
+
 data(mtcars)
+plot(mtcars)
+
+colnames(mtcars)
 head(mtcars)
 summary(mtcars)
 
@@ -369,7 +380,7 @@ plot.ts(kingstimeseriesSMA8)
 kingstimeseriesSMA12<-SMA(kingstimeseries,n=12)
 plot.ts(kingstimeseriesSMA12)
 
-par(mfrow=c(2,2))                        #하나의 그래프 화면에 함꼐 표현하기
+par(mfrow=c(2,2))                        # 하나의 그래프 화면에 함꼐 표현하기
 plot.ts(kingstimeseries)
 plot.ts(kingstimeseriesSMA3)
 plot.ts(kingstimeseriesSMA8)
@@ -377,8 +388,7 @@ plot.ts(kingstimeseriesSMA12)
 
 
 
-#차분하여 정상성 확인하기 (difference)
-
+# 차분하여 정상성 확인하기 (difference)
 # diff 함수를 활용하여 데이터 차분하기
 
 kingstimeseriesdiff1 <- diff(kingstimeseries, differences = 1)
@@ -407,7 +417,6 @@ sd(kingstimeseriesdiff3)
 
 
 # ARIMA 모델 결정하기 ARIMA(p, 1, q)
-
 # acf함수와 pacf 함수를 사용하여 모형 결정하기
 
 
