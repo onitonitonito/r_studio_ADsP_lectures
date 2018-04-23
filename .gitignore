@@ -7,3 +7,8 @@
 *.RData
 .Rproj.user
 .Rhistory
+
+#_____________________________________________________
+#  2. ipython notebook temporary check point
+#^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.ipynb_checkpoints/
