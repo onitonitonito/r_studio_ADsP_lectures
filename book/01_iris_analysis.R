@@ -17,6 +17,9 @@ head(iris)
 summary(iris)
 plot(iris)
 
+ggplot(data=iris, aes(x=iris$Sepal.Width,y=iris$Sepal.Length)) + geom_point()
+ggplot(data=iris, aes(x=iris$Petal.Width,y=iris$Petal.Length)) + geom_point()
+
 se_L <- iris$Sepal.Length
 mean(se_L)
 median(se_L)

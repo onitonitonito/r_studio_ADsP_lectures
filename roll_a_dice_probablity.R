@@ -17,8 +17,7 @@ check_prob <- function(prob) {
     stop("\n'prob' values must be between 0 and 1")
   }
   if (sum(prob) != 1) {
-    stop("\nelements in 'prob' must add up to 1")
-  }
+    stop("\nelements in 'prob' must add up to 1")  }
 }
 
 #auxiliary function "check_prob" checks vaildity of the input "sides" for "die(sides, prob)"

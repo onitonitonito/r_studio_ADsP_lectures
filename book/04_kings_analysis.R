@@ -33,11 +33,11 @@ kings <- c(60, 43, 67, 50, 56, 42, 50, 65, 68, 43,
 
 kingstimeseries <- ts(kings)            #ts함수를 활용하여 데이터를 시계열데이터로 변환
 kingstimeseries
+
 "____ (SET) TIME SERIES DATA ___
 Time Series:   Start = 1 / End = 42 / Frequency = 1
 "
 plot.ts(kingstimeseries)                #plot.ts 함수를 활용하여 시계열데이터를 도식화
-
 
 #SMA 함수를 이용해 간단한 시계열트랜드를 보여주는 분해시계열 이동평균그래프 그리기
 kingstimeseriesSMA3 <- SMA(kingstimeseries,n=3)
@@ -50,11 +50,17 @@ kingstimeseriesSMA12<-SMA(kingstimeseries,n=12)
 plot.ts(kingstimeseriesSMA12)
 
 par(mfrow=c(2,2))                        # 하나의 그래프 화면에 함꼐 표현하기
-plot.ts(kingstimeseries)
-plot.ts(kingstimeseriesSMA3)
-plot.ts(kingstimeseriesSMA8)
-plot.ts(kingstimeseriesSMA12)
+a1 <- (kingstimeseries)
+a2 <- (kingstimeseriesSMA3)
+a3 <- (kingstimeseriesSMA8)
+a4 <- (kingstimeseriesSMA12)
+ts.plot(a1)
+ts.plot(a2)
+ts.plot(a3)
+ts.plot(a4)
 
+par(mfrow=c(1,1))
+ts.plot(a1,a2,a3,a4, gpars = list(col = c("black", "red", "green", "blue")))
 
 # 차분하여 정상성 확인하기 (difference) - diff 함수를 활용하여 데이터 차분하기
 kingstimeseriesdiff1 <- diff(kingstimeseries, differences = 1)

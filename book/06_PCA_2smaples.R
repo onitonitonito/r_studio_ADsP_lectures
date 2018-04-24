@@ -99,7 +99,7 @@ biplot(US.prin)
 #############################################
 
 # csv ???? ?ҷ??��? (file importing)
-f_2007 <- read.csv("./_static\\finance_2007.csv",
+f_2007 <- read.csv("./_static/finance_2007.csv",
                    header = TRUE, stringsAsFactors = FALSE)
 head(f_2007)
 # 6개 증권사현황 = 교보,메리츠,대신,대우,동부,SK
