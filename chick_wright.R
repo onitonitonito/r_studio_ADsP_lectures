@@ -1,5 +1,3 @@
-rm(list=ls())
-
 library(MASS)
 data("ChickWeight")
 colnames(ChickWeight)
